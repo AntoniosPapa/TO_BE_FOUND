@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  # resources :profiles, only: %i[index]
-  get '/profile', to: 'profiles#show'
+  resources :profiles, only: %i[show]
+  # get '/profile', to: 'profiles#show'
 end
