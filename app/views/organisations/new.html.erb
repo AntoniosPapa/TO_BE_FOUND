@@ -1,0 +1,14 @@
+<div class="container p-20 mt-5">
+        <h3>Create a new organisation</h3>
+        <%= simple_form_for @organisation do |f| %>
+
+          <%= f.input :name, as: :text, placeholder: "Add the name of your Organisation" %>
+          <%= f.input :address, as: :text, placeholder: "Where is your organisation located? enter the address" %>
+          <%= f.input :description, as: :text, placeholder: "Tell us a bit about the causes and the goals of your organisation" %>
+          <%= f.input :website, as: :text,  placeholder: "How can people find you and read more about you? Enter your website" %>
+          <%= f.input :email, as: :text, placeholder: "Enter email so people who are interested in your organisation can reach out to you"%>
+
+          <%= f.submit "Create Organisation", class: 'btn btn-success' %>
+        <% end %>
+
+</div>
