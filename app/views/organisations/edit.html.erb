@@ -1,0 +1,17 @@
+<div class="container p-20">
+        <h2>Edit your Organisation</h2>
+        <%= simple_form_for @organisation do |f| %>
+
+        <h3> Edit the colums that are needed in order for people to stay up to date with your organisation </h3>
+          <%= f.input :name, as: :text, placeholder: 'For example: I can come once a week and read some childrensbook with the kids' %>
+          <%= f.input :address, as: :text, placeholder: 'For example: I can come once a week and read some childrensbook with the kids' %>
+          <%= f.input :description, as: :text, placeholder: 'For example: I can come once a week and read some childrensbook with the kids' %>
+          <%= f.input :website, as: :text, placeholder: 'For example: I can come once a week and read some childrensbook with the kids' %>
+          <%= f.input :email, as: :text, placeholder: 'For example: I can come once a week and read some childrensbook with the kids' %>
+
+        <h2> Would you like to add anything else? </h2>
+          <%= f.input :additional, as: :text %>
+          
+          <%= f.submit "Update Organisation", class: 'btn btn-success' %>
+        <% end %>
+</div>
