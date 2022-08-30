@@ -1,6 +1,22 @@
 class OrganisationsController < ApplicationController
   skip_before_action :authenticate_user!, except: :new
 
+  def index
+    @organisations = Organisation.all
+  end
+
+  def show
+    @organisation = Organisation.new
+
+    # set_organisation
+
+    # if @organisation.save
+    #   redirect_to organisation_path(@organisation), notice: "Here is the organisation!"
+    # else
+    #   render :show, status: :unprocessable_entity
+    # end
+  end
+
   def new
     @organisation = Organisation.new
   end
@@ -10,7 +26,7 @@ class OrganisationsController < ApplicationController
     @organisation.user = current_user
 
     if @organisation.save
-      redirect_to root_path(@organisation), notice: "New organisation created"
+      redirect_to organisations_path(@organisation), notice: "New organisation created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,7 +39,7 @@ class OrganisationsController < ApplicationController
   def update
     set_organisation
     @organisation.update(organisation_params)
-    redirect_to root_path
+    redirect_to organisation_path
   end
 
   private
