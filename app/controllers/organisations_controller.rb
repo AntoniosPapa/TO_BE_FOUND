@@ -10,23 +10,29 @@ class OrganisationsController < ApplicationController
     @organisation.user = current_user
 
     if @organisation.save
-      redirect to organisation_path(@organisation), notice: "New organisation created"
+      redirect_to root_path(@organisation), notice: "New organisation created"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
+    set_organisation
   end
 
   def update
+    set_organisation
     @organisation.update(organisation_params)
-    redirect to organisation_path
+    redirect_to root_path
   end
 
   private
 
+  def set_organisation
+    @organisation = Organisation.find(params[:id])
+  end
+
   def organisation_params
-    params.require(:organisation).permit(:name, :address, :description, :photo, :website, :email, :first_name)
+    params.require(:organisation).permit(:name, :address, :description, :photo, :website, :email)
   end
 end
