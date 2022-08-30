@@ -3,15 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :organisations, only: [ :new, :create, :edit, :update, :show, :index ] do
-
     resources :donations, only: :create
   end
-  
+
   resources :users, only: [:update]
-  
   resources :donations
-  
   resources :profiles, only: %i[show]
-  
   get '/profile', to: 'profiles#show'
 end
