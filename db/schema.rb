@@ -46,24 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_173515) do
     t.index ["organisation_id"], name: "index_posts_on_organisation_id"
   end
 
-  create_table "skill_neededs", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.bigint "organisation_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organisation_id"], name: "index_skill_neededs_on_organisation_id"
-  end
-
-  create_table "skill_offereds", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_skill_offereds_on_user_id"
-  end
-
   create_table "skills_needs", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -101,8 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_173515) do
   add_foreign_key "donations", "users"
   add_foreign_key "organisations", "users"
   add_foreign_key "posts", "organisations"
-  add_foreign_key "skill_neededs", "organisations"
-  add_foreign_key "skill_offereds", "users"
   add_foreign_key "skills_needs", "organisations"
   add_foreign_key "skills_offers", "users"
 end
