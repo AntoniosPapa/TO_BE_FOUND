@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  get 'profiles/show'
   devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-resources :organisations do
-  resources :donations, only: :create
-end
+  resources :organisations, only: [ :new, :create, :edit, :update ] do
+    resources :donations, only: :create
+  end
   # Defines the root path route ("/")
   # root "articles#index"
-
+  resources :users, only: [:update]
+  resources :donations
   resources :profiles, only: %i[show]
   # get '/profile', to: 'profiles#show'
 end
