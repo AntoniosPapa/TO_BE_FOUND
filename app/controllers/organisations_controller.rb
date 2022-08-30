@@ -5,10 +5,6 @@ class OrganisationsController < ApplicationController
     @organisations = Organisation.all
   end
 
-  def new
-    @organisation = Organisation.new
-  end
-
   def show
     @organisation = Organisation.new
 
@@ -21,12 +17,16 @@ class OrganisationsController < ApplicationController
     # end
   end
 
+  def new
+    @organisation = Organisation.new
+  end
+
   def create
     @organisation = Organisation.new(organisation_params)
     @organisation.user = current_user
 
     if @organisation.save
-      redirect_to root_path(@organisation), notice: "New organisation created"
+      redirect_to organisations_path(@organisation), notice: "New organisation created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class OrganisationsController < ApplicationController
   def update
     set_organisation
     @organisation.update(organisation_params)
-    redirect_to root_path
+    redirect_to organisation_path
   end
 
   private
