@@ -1,0 +1,7 @@
+<%= simple_form_for [organisation, post] do |f| %>
+
+          <%= f.input :photo, as: :file %>
+          <%= f.input :title, placeholder: "Post title" %>
+          <%= f.input :content, as: :text, placeholder: "write your new shit" %>
+          <%= f.submit "Submit", class: 'btn btn-success' %>
+<% end %>
