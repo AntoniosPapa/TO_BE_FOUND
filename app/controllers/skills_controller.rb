@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
   def create
-    @skill = Skills.new(skill_params)
+    @skill = Skill.new(skill_params)
     @skill.user = current_user
     if @skill.save
       redirect_to profile_path

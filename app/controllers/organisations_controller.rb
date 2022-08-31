@@ -8,6 +8,8 @@ class OrganisationsController < ApplicationController
   def show
     @organisation = Organisation.find(params[:id])
     @donation = Donation.new
+    @need = Need.new
+    @needs = @organisation.needs
   end
 
   def new
