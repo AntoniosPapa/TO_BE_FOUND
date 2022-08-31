@@ -1,11 +1,12 @@
-class SkillsOffersController < ApplicationController
-  def new
-    @skills_offers = SkillsOffers.new
-  end
-
+class SkillsController < ApplicationController
   def create
-    @skills_offers = SkillsOffers.new(skills_offers_params)
-    @skills_offers.user = current_user
+    @skill = Skills.new(skill_params)
+    @skill.user = current_user
+    if @skill.save
+      redirect_to profile_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -13,13 +14,13 @@ class SkillsOffersController < ApplicationController
   end
 
   def update
-    @skills_offers.update(skills_offers_params)
+    @skill.update(skill_params)
     redirect_to profile_path
   end
 
   private
 
-  def skills_offers_params
-    params.require(:skills_offers).permit(:skills)
+  def skill_params
+    params.require(:skill).permit(:name, :description)
   end
 end

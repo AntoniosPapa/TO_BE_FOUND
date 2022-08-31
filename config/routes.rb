@@ -10,8 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:update]
 
-  resources :skills_offers, only: %i[new create edit update]
-
+  resources :skills, only: %i[index create edit update]
 
   resources :donations
 
