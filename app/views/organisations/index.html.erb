@@ -3,3 +3,26 @@
       Organisations you can find through our website
     </div>
   </div>
+
+<div class="container p-5">
+  <div class="row">
+    <% @organisations.each do |organisation|%>
+      <div class="col-12">
+        <%= link_to organisation_path(organisation) do %>
+          <div class="card-product">
+            <% if organisation.photo.attached? %>
+              <%= cl_image_tag organisation.photo.key %>
+            <% end %>
+            <div class="card-product-infos">
+              <h2><%= organisation.name %></h2>
+              <h3> <%= organisation.address %></h3>
+              <p> <%= organisation.description %></p>
+              <p> <%= organisation.website %></p>
+              <p> <%= organisation.email %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
