@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require "open-uri"
+require 'open-uri'
+require 'faker'
 
 puts 'Cleaning database...'
+Post.destroy_all
+Organisation.destroy_all
 User.destroy_all
-# Organisation.destroy_all
-# Post.destroy_all
 
 puts "populate database with users.."
 
@@ -19,9 +20,10 @@ user_photos =  ["https://images.pexels.com/photos/2269872/pexels-photo-2269872.j
 
 user_photos.each do |user_photo|
   file = URI.open(user_photo)
-  user = User.new(first_name: Faker::Name.female_first_name,
+  user = User.new(
+                  first_name: Faker::Name.first_name,
                   last_name: Faker::Name.last_name,
-                  descripition: Faker::TvShows::FamilyGuy.quote,
+                  description: Faker::TvShows::FamilyGuy.quote,
                   email: Faker::Internet.email,
                   password: 123456,
                 )
@@ -29,7 +31,7 @@ user_photos.each do |user_photo|
   user.save!
   puts "#{user.first_name} was successfully saved."
 
-  # skills_offer = SkillsOffer.new(name: rand(:id),
+  # skills_offer = SkillsOffer.new(name: [videographer ...].sample,
   #                                user: user,
   #                                description: Faker::TvShows::FamilyGuy.quote)
   # skills_offer.save!
