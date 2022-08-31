@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
-  # has_one_attached :photo
+  has_one_attached :photo
   has_many :donations
   has_many :skills
   has_one :organisation
