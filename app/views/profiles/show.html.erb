@@ -22,6 +22,10 @@
         <i data-action="click->edit-skills#displayForm">Add your skill</i>
       </button>
       <%= render "skills/form", skill: @skill %>
+      <% @skills.each do |skill| %>
+        <h2><%= skill.name %>:</h2>
+        <p><%= skill.description  %></p>
+      <% end %>
     </div>
 
     <div class="card-profile col-4 rounded p-3 shadow">
@@ -34,7 +38,9 @@
     </div>
 
     <div class="card-profile col-4 rounded p-3 shadow">
-    
+      <ul>
+      <li><%= @skill.name %></li>
+    </ul>
     </div>
 
 
