@@ -27,3 +27,9 @@
   <%# <% end %>
 <%# </ul> %>
 <%# <br> %>
+
+<%= render "needs/form", need: @need, organisation: @organisation %>
+<% @needs.each do |need| %>
+  <h2><%= need.name %>:</h2>
+  <p><%= need.description  %></p>
+<% end %>

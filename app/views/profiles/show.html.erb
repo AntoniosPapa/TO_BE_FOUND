@@ -29,11 +29,11 @@
         <li><%= link_to 'Edit my organization', edit_organisation_path(current_user), class: "list-unstyled" %></li>
       </ul>
     </div>
-    <%= render "skills/new", skill: @skill %>
-    <% @skills.each do |skill| %>
-      <h2><%= skill.name %>:</h2>
-      <p><%= skill.description  %></p>
-    <% end %>
+<%= render "skills/new", skill: @skill %>
+<% @skills.each do |skill| %>
+  <h2><%= skill.name %>:</h2>
+  <p><%= skill.description  %></p>
+<% end %>
 
   </div>
 </div>
