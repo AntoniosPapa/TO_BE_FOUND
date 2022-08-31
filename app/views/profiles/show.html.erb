@@ -17,6 +17,11 @@
     </div>
 
     <div class="card-profile col-4 rounded p-3 shadow">
+      <h3>What skills do you have to offer?</h3>
+      <%= link_to 'Your Skills', edit_user_registration_path, class: "btn btn-success rounded shadow" %>
+    </div>
+
+    <div class="card-profile col-4 rounded p-3 shadow">
       <h3>link collection</h3>
       <ul>
         <li><%= link_to 'All organization', organisations_path, class: "list-unstyled" %></li>
@@ -24,7 +29,8 @@
         <li><%= link_to 'Edit my organization', edit_organisation_path(current_user), class: "list-unstyled" %></li>
       </ul>
     </div>
-
+    <%= render "skills/new", skill: @skill %>
+    <%= @skills %>
 
 
   </div>
