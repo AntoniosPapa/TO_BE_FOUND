@@ -1,12 +1,18 @@
-<h1>Organisations name</h1>
-<img src="https://images.unsplash.com/photo-1617450365226-9bf28c04e130?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bmdvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+<div class="p-5">
 
+          <%# :crop => "pad", class: "picture_granny_profile" %>
 
-<h2>organisations address</h2>
+          <% if @organisation.photo.attached? %>
+              <%= cl_image_tag @organisation.photo.key %>
+          <% end %>
 
-<p>organisations description</p>
-<h4>organisations website</h4>
-<h4>organisations email</h4>
+        <h3><%= @organisation&.name&.capitalize %> </h3>
+        <h3><%= @organisation&.address&.capitalize %> </h3>
+        <p><%= @organisation&.description %></p>
+        <%# <h4><%= @organisation&.website </h4> %>
+        <a href="<%= @organisation&.website %>" class="btn btn-success btn-sm">official website</a>
+        <h4><%= @organisation&.email %> </h4>
+
 
 
 <div class="container p-5">
