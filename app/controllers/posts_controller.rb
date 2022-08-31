@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.new
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -15,12 +15,12 @@ class PostsController < ApplicationController
   end
 
   def create
+    @organisation = Organisation.find(params[:organisation_id])
     @post = Post.new(post_params)
-    @post.organisation = Organisation.find(params[:organisation_id])
+    @post.organisation = @organisation
     # @post.user = current_user
-
     if @post.save
-      redirect_to organisation_path(current_user), notice: "New post created"
+      redirect_to organisation_path(@organisation), notice: "New post created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,6 +29,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :photo)
   end
 end
