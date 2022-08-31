@@ -7,3 +7,16 @@
 
 <h3>donations box</h3>
 
+<%# <p><strong>Donations</strong></p>
+<ul class="list-group">
+  <% @organisation.donations.each do |donation| %>
+    <%# <li class="list-group-item"><%= donation.type_of_donation</li> %>
+    <%# <li class="list-group-item"><%= donation.quantity</li> %>
+  <%# <% end %>
+<%# </ul> %>
+<%# <br> %>
+<%= simple_form_for [@organisation, @donation ] do |f| %>
+  <%= f.input :type_of_donation, collection: ['Monetary', 'Workforce'] %>
+  <%= f.input :quantity %>
+  <%= f.submit %>
+<% end %>

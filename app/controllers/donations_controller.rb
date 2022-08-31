@@ -1,27 +1,19 @@
 class DonationsController < ApplicationController
-  before_action :set_organisation, only: %i[new create]
-
-  def new
-    @donation = Donation.new
-  end
 
   def create
     @donation = Donation.new(donation_params)
+    @organisation = Organisation.find(params[:organisation_id])
+    @donation.organisation = @organisation
     @donation.user = current_user
-    @donation.organisation = Organisation.find(params[:organisation_id])
 
     if @donation.save
-      redirect_to profiles_path(@profile)
+      redirect_to organisation_path(@organisation)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   private
-
-  def set_donation
-    @donation = Donation.find(params[:id])
-  end
 
   def donation_params
     params.require(:donation).permit(:type_of_donation, :quantity)
