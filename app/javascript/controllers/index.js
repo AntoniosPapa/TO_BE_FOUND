@@ -4,12 +4,8 @@
 
 import { application } from "./application"
 
+import EditSkillsController from "./edit_skills_controller"
+application.register("edit-skills", EditSkillsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-
-
-import NestedForm from 'stimulus-rails-nested-form'
-
-
-application.register('nested-form', NestedForm)

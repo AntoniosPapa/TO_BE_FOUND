@@ -1,4 +1,4 @@
-<%= simple_form_for skill do |f| %>
+<%= simple_form_for skill, html: {class: "d-none", data: {edit_skills_target: "form"}} do |f| %>
           <%= f.input :name, collection: $skills %>
           <%= f.input :description, as: :text, placeholder: "Tell us a bit about the causes and the goals of your organisation" %>
           <%= f.submit "Submit", class: 'btn btn-success' %>

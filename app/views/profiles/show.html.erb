@@ -16,9 +16,12 @@
       <%= link_to 'Create a new organization', edit_user_registration_path, class: "btn btn-success rounded shadow" %>
     </div>
 
-    <div class="card-profile col-4 rounded p-3 shadow">
+    <div class="card-profile col-4 rounded p-3 shadow" data-controller="edit-skills">
       <h3>What skills do you have to offer?</h3>
-      <%= link_to 'Your Skills', edit_user_registration_path, class: "btn btn-success rounded shadow" %>
+      <button class="btn btn-success rounded shadow">
+        <i data-action="click->edit-skills#displayForm">Add your skill</i>
+      </button>
+      <%= render "skills/form", skill: @skill %>
     </div>
 
     <div class="card-profile col-4 rounded p-3 shadow">
@@ -29,8 +32,11 @@
         <li><%= link_to 'Edit my organization', edit_organisation_path(current_user), class: "list-unstyled" %></li>
       </ul>
     </div>
-    <%= render "skills/new", skill: @skill %>
-    <%= @skills %>
+
+    <div class="card-profile col-4 rounded p-3 shadow">
+    
+    </div>
+
 
 
   </div>
