@@ -30,8 +30,10 @@
       </ul>
     </div>
     <%= render "skills/new", skill: @skill %>
-    <%= @skills %>
-
+    <% @skills.each do |skill| %>
+      <h2><%= skill.name %>:</h2>
+      <p><%= skill.description  %></p>
+    <% end %>
 
   </div>
 </div>

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     resources :posts, only: %i[index show new create edit update]
   end
 
-  resources :profiles, only: %i[show]
+  # resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'
 end
