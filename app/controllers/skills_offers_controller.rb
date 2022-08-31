@@ -1,2 +1,0 @@
-class SkillsOffersController < ApplicationController
-end

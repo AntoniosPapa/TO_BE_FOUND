@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :donations
-  has_many :skill_offers
+  has_many :skills
   has_one :organisation
 end

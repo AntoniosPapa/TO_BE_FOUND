@@ -1,9 +1,11 @@
 class ProfilesController < ApplicationController
   # skip_before_action :authenticate_user!, except: :new
-  before_action :set_offer, only: %i[show create edit update]
+  before_action :set_profile, only: %i[show create edit update]
 
   def show
     @profile = current_user
+    @skill = Skill.new
+    @skills = Skill.where(user: @profile)
   end
 
 
@@ -30,7 +32,7 @@ class ProfilesController < ApplicationController
 
   private
 
-  def set_offer
+  def set_profile
     # @profile = Profile.find(params[:id])
     @profile = current_user
   end

@@ -6,15 +6,8 @@ class OrganisationsController < ApplicationController
   end
 
   def show
-    @organisation = Organisation.new
-
-    # set_organisation
-
-    # if @organisation.save
-    #   redirect_to organisation_path(@organisation), notice: "Here is the organisation!"
-    # else
-    #   render :show, status: :unprocessable_entity
-    # end
+    @organisation = Organisation.find(params[:id])
+    @donation = Donation.new
   end
 
   def new

@@ -1,6 +1,6 @@
-class CreateSkillsOffers < ActiveRecord::Migration[7.0]
+class CreateSkills < ActiveRecord::Migration[7.0]
   def change
-    create_table :skills_offers do |t|
+    create_table :skills do |t|
       t.string :name
       t.text :description
       t.references :user, null: false, foreign_key: true
