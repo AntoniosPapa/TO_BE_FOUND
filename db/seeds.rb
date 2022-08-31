@@ -16,7 +16,15 @@ User.destroy_all
 
 puts "populate database with users.."
 
-user_photos =  ["https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/1081685/pexels-photo-1081685.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/3746276/pexels-photo-3746276.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://i0.wp.com/news.globallandscapesforum.org/wp-content/uploads/2021/02/Sonia-Guajajara-nofilter.jpg?fit=444%2C592&ssl=1", "https://deolhonosruralistas.com.br/wp-content/uploads/2019/02/mulheresindigenas-kerexu.jpg"]
+user_photos =  [
+  "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/1081685/pexels-photo-1081685.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/3746276/pexels-photo-3746276.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://i0.wp.com/news.globallandscapesforum.org/wp-content/uploads/2021/02/Sonia-Guajajara-nofilter.jpg?fit=444%2C592&ssl=1",
+  "https://deolhonosruralistas.com.br/wp-content/uploads/2019/02/mulheresindigenas-kerexu.jpg"
+]
 
 user_photos.each do |user_photo|
   file = URI.open(user_photo)
