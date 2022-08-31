@@ -1,29 +1,41 @@
-<h1>Welcome to the jungle</h1>
+<h1>Organisations name</h1>
 <img src="https://images.unsplash.com/photo-1617450365226-9bf28c04e130?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bmdvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
 
 
-<h2>organisations name</h2>
-<p>shaka laka shaka laka tirim tirim trom!. Umba Umba tam tam taram!</p>
+<h2>organisations address</h2>
+
+<p>organisations description</p>
+<h4>organisations website</h4>
+<h4>organisations email</h4>
 
 
 <div class="container p-5">
 <h3>You can donate money or your workforce here:</h3>
-  <div class="row">
-    <%= simple_form_for [@organisation, @donation ] do |f| %>
-      <%= f.input :type_of_donation, collection: ['Money', 'Workforce'] %>
-      <%= f.input :quantity %>
-      <%= f.input :description %>
-      <%= f.submit %>
-    <% end %>
+  <div class="col-4">
+    <div class="row">
+      <%= simple_form_for [@organisation, @donation ] do |f| %>
+        <%= f.input :type_of_donation, collection: ['Money', 'Workforce'] %>
+        <%= f.input :quantity %>
+        <%= f.input :description %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-
-<%# <p><strong>Donations</strong></p>
-<ul class="list-group">
-  <% @organisation.donations.each do |donation| %>
-    <%# <li class="list-group-item"><%= donation.type_of_donation</li> %>
-    <%# <li class="list-group-item"><%= donation.quantity</li> %>
-  <%# <% end %>
-<%# </ul> %>
-<%# <br> %>
+<div class="container p-5">
+      <%= link_to "Create a new post!", new_organisation_post_path(@organisation), class: "btn btn-warning btn-sm" %>
+</div>
+      <%# <%= link_to "create a post", new_organisation_post_path %>
+<div class="container p-5">
+  <div class="col-4">
+    <div class="row">
+      <p><strong>Posts</strong></p>
+        <ul class="list-group">
+          <% @organisation.posts.each do |post| %>
+            <li class="list-group-item"><%= link_to post.title, organisation_post_path(@organisation, post)%> <%= post.created_at %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
