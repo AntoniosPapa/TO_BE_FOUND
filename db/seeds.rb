@@ -40,8 +40,8 @@ user_photos.each do |user_photo|
   puts "#{user.first_name} was successfully saved."
 
 #   skills = Skills.new(name: [videographer ...].sample,
-#                                  user: user,
-#                                  description: Faker::TvShows::FamilyGuy.quote)
+#                             user_id: User.all.sample.id,
+#                            description: Faker::TvShows::FamilyGuy.quote)
 #   skills.save!
 #   puts " Skills with #{skill.id} was successfully saved."
 end
