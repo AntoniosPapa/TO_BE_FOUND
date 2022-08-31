@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :organisations, only: %i[index new create edit update show] do
-    resources :donations, only: %i[new create]
+
+  resources :organisations, except: %i[destroy] do
+    resources :donations, only: %i[create]
   end
 
   resources :organisations do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:update]
-  resources :donations
+ 
   resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'
 end
