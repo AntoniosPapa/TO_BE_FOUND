@@ -10,7 +10,9 @@ require 'open-uri'
 require 'faker'
 
 puts 'Cleaning database...'
+Skill.destroy_all
 Post.destroy_all
+Need.destroy_all
 Organisation.destroy_all
 User.destroy_all
 
@@ -37,13 +39,17 @@ user_photos.each do |user_photo|
                 )
   user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: "image/png")
   user.save!
+
   puts "#{user.first_name} was successfully saved."
 
-#   skills = Skills.new(name: [videographer ...].sample,
-#                             user_id: User.all.sample.id,
-#                            description: Faker::TvShows::FamilyGuy.quote)
-#   skills.save!
-#   puts " Skills with #{skill.id} was successfully saved."
+  skill = Skill.new(
+    name: Skill::SKILLS.sample,
+    user_id: User.all.sample.id,
+    description: Faker::TvShows::FamilyGuy.quote)
+
+  skill.save!
+
+  puts " Skill with #{skill.id} was successfully saved."
 end
 
 puts "populate database with organisations.."
@@ -171,3 +177,22 @@ orga6.photo.attach(
 orga6.save!
 
 p "Created #{Organisation.count} Organisations"
+
+Organisation.all do
+  need = Need.new(
+    name: Need::NEEDS.sample,
+    organisation_id: Organisation.all.sample.id,
+    description: Faker::TvShows::FamilyGuy.quote
+  )
+  need.save!
+  puts "Need with #{need.id} was successfully saved."
+end
+
+Organisation.all do
+  post = Post.new(
+    title: Faker::TvShows::FamilyGuy.quote,
+    content: Faker::TvShows::FamilyGuy.quote,
+    organisation_id: Organisation.all.sample.id
+  )
+  puts "Post with #{post.id} was successfully saved."
+end
