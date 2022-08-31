@@ -5,7 +5,19 @@
 <h2>organisations name</h2>
 <p>shaka laka shaka laka tirim tirim trom!. Umba Umba tam tam taram!</p>
 
-<h3>donations box</h3>
+
+<div class="container p-5">
+<h3>You can donate money or your workforce here:</h3>
+  <div class="row">
+    <%= simple_form_for [@organisation, @donation ] do |f| %>
+      <%= f.input :type_of_donation, collection: ['Money', 'Workforce'] %>
+      <%= f.input :quantity %>
+      <%= f.input :description %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
 
 <%# <p><strong>Donations</strong></p>
 <ul class="list-group">
@@ -15,8 +27,3 @@
   <%# <% end %>
 <%# </ul> %>
 <%# <br> %>
-<%= simple_form_for [@organisation, @donation ] do |f| %>
-  <%= f.input :type_of_donation, collection: ['Monetary', 'Workforce'] %>
-  <%= f.input :quantity %>
-  <%= f.submit %>
-<% end %>
