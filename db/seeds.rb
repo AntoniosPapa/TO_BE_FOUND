@@ -31,31 +31,36 @@ user_photos.each do |user_photo|
   user.save!
   puts "#{user.first_name} was successfully saved."
 
-  # skills_offer = SkillsOffer.new(name: [videographer ...].sample,
-  #                                user: user,
-  #                                description: Faker::TvShows::FamilyGuy.quote)
-  # skills_offer.save!
-  # puts " Skills_offer with #{skills_offer.id} was successfully saved."
+#   skills = Skills.new(name: [videographer ...].sample,
+#                                  user: user,
+#                                  description: Faker::TvShows::FamilyGuy.quote)
+#   skills.save!
+#   puts " Skills with #{skill.id} was successfully saved."
 end
 
 # puts "populate database with organiations.."
 
 # Organisation.create!([{
-#   name: "Physics",
-#   address: "Pete Docter",
-#   description: "A.",
-#   read_on: 1.week.ago
+#   name: "APIB - Articulation of Indigenous Peoples of Brazil",
+#   address: "Brazil",
+#   description: "Apib is an instance of national reference of the indigenous movement in Brazil,
+# created from the bottom up. It brings together our indigenous regional organizations and
+# was born with the purpose of strengthening the unity of our peoples, the articulation
+# between the different indigenous regions and organizations in the country,
+# in addition to mobilizing indigenous peoples and organizations against threats
+# and aggressions against indigenous rights.",
+#   website: "https://apiboficial.org/?lang=en"
 # },
 # {
-#   title: "Biology",
-#   author: "Pete Docter",
-#   description: "B.",
-#   read_on: 2.years.ago
+#   name: "Minga Indigena",
+#   address: "Columbia",
+#   description: "",
+#   website: "https://www.youtube.com/watch?v=y4nt7MUahOc"
 # },
 # {
-#  title: "English",
-#   author: "Pete Doct",
+#  name: "English",
+#   address: "Pete Doct",
 #   description: "C.",
-#   read_on: 3.years.ago
+#   website:
 # }])
 # p "Created #{Book.count} Books"
