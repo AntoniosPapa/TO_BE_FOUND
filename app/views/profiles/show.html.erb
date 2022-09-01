@@ -42,7 +42,7 @@
       <p><strong>Donations</strong></p>
         <ul class="list-group">
           <% @profile.donations.each do |donation| %>
-            <li class="list-group-item"><%= donation.id%>-<%= donation.organisation.name%></li>
+            <li class="list-group-item"><%= donation.organisation.name%></li>
             <li class="list-group-item"><%= donation.quantity%> <%= donation.type_of_donation%></li>
             <li class="list-group-item"><%= donation.description%></li>
 
