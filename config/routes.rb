@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get '/thankyou', to: 'pages#thankyou'
 
   resources :users, only: [:update]
 
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
     resources :posts, only: %i[index show new create edit update]
     resources :needs, only: %i[index create edit update]
   end
+
+  resources :donations, only: %i[show]
+
 
   # resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'

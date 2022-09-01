@@ -1,0 +1,11 @@
+<h1>Thank you for your donation.</h1>
+
+<h2>You have just helped our organisation to get a step closer to our goal.</h2>
+
+          <%# <% if @organisation.photo.attached? %> %>
+              <%# <%= cl_image_tag(@organisation.photo.key, :width=>500, :crop=>"pad") %> %>
+          <%# <% end %> %>
+
+<div class="container p-5">
+      <%= link_to "check out other organisations you would like to help", organisations_path(@user), class: "btn btn-warning btn-lg" %>
+</div>
