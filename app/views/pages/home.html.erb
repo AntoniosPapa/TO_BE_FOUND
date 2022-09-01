@@ -1,7 +1,8 @@
 <h1>To be Found</h1>
 
-
-
 <div class="container p-5">
-      <%= link_to "check out  all the organisations", organisations_path(@user), class: "btn btn-success btn-sm" %>
+  <%= link_to "check out  all the organisations", organisations_path(@user), class: "btn btn-success btn-sm" %>
+  <% if current_user %>
+    <%= link_to "My profile", profile_path(@user), class: "btn btn-success btn-sm" %>
+  <% end %>
 </div>
