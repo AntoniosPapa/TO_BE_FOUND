@@ -1,9 +1,9 @@
 <div class="p-5">
 
 
-        
 
-          <% if @organisation.photo.attached? %>             
+
+          <% if @organisation.photo.attached? %>
               <%= cl_image_tag(@organisation.photo.key, :width=>500, :crop=>"pad") %>
           <% end %>
 
@@ -17,7 +17,7 @@
 
 
 <div class="container p-5">
-<h3>You can donate money here:</h3>
+<h3>You can donate money here</h3>
   <div class="col-4">
     <div class="row">
       <%= simple_form_for [@organisation, @donation ] do |f| %>
