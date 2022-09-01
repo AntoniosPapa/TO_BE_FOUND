@@ -49,7 +49,7 @@ user_photos.each do |user_photo|
 
   skill.save!
 
-  puts " Skill with #{skill.id} was successfully saved."
+  puts "Skill with #{skill.id} was successfully saved."
 end
 
 puts "populate database with organisations.."
@@ -91,7 +91,6 @@ orga2 = Organisation.new(
   are facing grave threats due to deforestation, resource extraction, land grabs, and
   destructive development projects. At Amazon Watch, we are launching bold, strategic,
   and timely actions to advance and amplify the solutions of Indigenous peoples.",
-
   website: "https://amazonwatch.org/",
   user_id: User.all.sample.id
 )
@@ -122,11 +121,11 @@ orga4 = Organisation.new(
   address: "Brasil",
   description: "Nós, comunidades Mẽbêngôkre (ou Kayapó) criamos, em 2001, o Instituto Raoni
   para defender os interesses do nosso povo. O IR é uma Organização da Sociedade Civil de
-    Interesse Público, sem fins lucrativos e de caráter associativo e apartidário localizada
-    na cidade de Peixoto de Azevedo (MT). Hoje representamos não apenas comunidades do povo Kayapó,
-      mas também dos povos Trumai, Tapayuna e Panará, para o acesso a políticas públicas e
-      captação de recursos para fortalecer nossas atividades culturais, nossa produção de
-      alimentos, nossa geração de renda e a proteção dos nossos territórios e direitos.",
+  Interesse Público, sem fins lucrativos e de caráter associativo e apartidário localizada
+  na cidade de Peixoto de Azevedo (MT). Hoje representamos não apenas comunidades do povo Kayapó,
+  mas também dos povos Trumai, Tapayuna e Panará, para o acesso a políticas públicas e
+  captação de recursos para fortalecer nossas atividades culturais, nossa produção de
+  alimentos, nossa geração de renda e a proteção dos nossos territórios e direitos.",
   website: "https://institutoraoni.org.br",
   user_id: User.all.sample.id
 )
@@ -134,8 +133,7 @@ orga4 = Organisation.new(
 orga4.photo.attach(
   io: URI.open("https://institutoraoni.org.br/site/wp-content/uploads/2020/07/0718-nota-raoni-800x533.jpeg"),
   filename: "#{orga3.name}.png",
-  content_type: "image/png"
-)
+  content_type: "image/png")
 orga4.save!
 
 orga5 = Organisation.new(
@@ -181,7 +179,7 @@ p "Created #{Organisation.count} Organisations"
 Organisation.all do
   need = Need.new(
     name: Need::NEEDS.sample,
-    organisation_id: Organisation.all.sample.id,
+    # organisation_id: Organisation.all.sample.id,
     description: Faker::TvShows::FamilyGuy.quote
   )
   need.save!
@@ -191,8 +189,9 @@ end
 Organisation.all do
   post = Post.new(
     title: Faker::TvShows::FamilyGuy.quote,
+    # organisation_id: Organisation.all.sample.id,
     content: Faker::TvShows::FamilyGuy.quote,
-    organisation_id: Organisation.all.sample.id
   )
+  post.save!
   puts "Post with #{post.id} was successfully saved."
 end
