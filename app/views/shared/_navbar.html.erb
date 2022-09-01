@@ -21,7 +21,6 @@
           <% else %>
             <%= image_tag "default-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-            <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", profile_path(@user), class: "dropdown-item" %>
               <%= link_to "Organisations", organisations_path, class: "dropdown-item" %>
@@ -37,6 +36,3 @@
     </div>
   </div>
 </div>
-
-
-<%# #102e68 %>
