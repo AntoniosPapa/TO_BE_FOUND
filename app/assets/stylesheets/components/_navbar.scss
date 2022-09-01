@@ -8,12 +8,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  height: 50px;
+  height: 115px;
 }
 
 .navbar-brand {
-  margin: 0px;
-  padding: 0px;
+
+}
+
+.navbar-brand img {
+  position: absolute;
+  top: 2px;
+  background: radial-gradient(#235696, #72c21900);
+  border-radius: 50%;
 }
 
 
