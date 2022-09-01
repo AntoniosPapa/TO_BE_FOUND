@@ -10,7 +10,9 @@ require 'open-uri'
 require 'faker'
 
 puts 'Cleaning database...'
+Skill.destroy_all
 Post.destroy_all
+Need.destroy_all
 Organisation.destroy_all
 User.destroy_all
 
@@ -31,19 +33,24 @@ user_photos.each do |user_photo|
   user = User.new(
                   first_name: Faker::Name.first_name,
                   last_name: Faker::Name.last_name,
-                  description: Faker::TvShows::FamilyGuy.quote,
+                  description: Faker::Quote.yoda,
                   email: Faker::Internet.email,
                   password: 123456,
                 )
   user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: "image/png")
   user.save!
+
   puts "#{user.first_name} was successfully saved."
 
-#   skills = Skills.new(name: [videographer ...].sample,
-#                                  user: user,
-#                                  description: Faker::TvShows::FamilyGuy.quote)
-#   skills.save!
-#   puts " Skills with #{skill.id} was successfully saved."
+  skill = Skill.new(
+    name: Skill::SKILLS.sample,
+    user_id: User.all.sample.id,
+    description: Faker::Quote.most_interesting_man_in_the_world
+  )
+
+  skill.save!
+
+  puts "Skill with #{skill.id} was successfully saved."
 end
 
 puts "populate database with organisations.."
@@ -58,8 +65,9 @@ orga1 = Organisation.new(
   in addition to mobilizing indigenous peoples and organizations against threats
   and aggressions against indigenous rights.",
   website: "https://apiboficial.org/?lang=en",
-  user_id: User.all.sample.id
-  )
+  user_id: User.all.sample.id,
+  email: "apib@oficial.br"
+)
 
 orga1.photo.attach(
   io: URI.open("https://apiboficial.org/files/2022/01/C%C3%ADcero-Bezerra-_-@cicerone.bezerra-2-400x250.jpeg"),
@@ -71,7 +79,7 @@ orga1.save!
 # },
 orga2 = Organisation.new(
   name: "Amazon Watch",
-  address: "",
+  address: "Amazonia",
   description: "Amazon Watch is a nonprofit organization founded in 1996 to protect
   the rainforest and advance the rights of Indigenous peoples in the Amazon Basin in
   Ecuador, Peru, Colombia, and Brazil. We work in solidarity with Indigenous and e
@@ -85,9 +93,9 @@ orga2 = Organisation.new(
   are facing grave threats due to deforestation, resource extraction, land grabs, and
   destructive development projects. At Amazon Watch, we are launching bold, strategic,
   and timely actions to advance and amplify the solutions of Indigenous peoples.",
-
   website: "https://amazonwatch.org/",
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  email: "amazon@watch.org"
 )
 
 orga2.photo.attach(
@@ -105,10 +113,15 @@ orga3 = Organisation.new(
   e visando sua autonomia através de articulação política e fortalecimento das
   organizações indígenas.",
   website: "https://coiab.org.br",
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  email: "coiab@brazil.br"
 )
 
-orga3.photo.attach(io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1657561892083x198606953326924350%2Fsite%2520copiarcafi.png?w=1024&h=589&auto=compress&dpr=2&fit=max"),  filename: "#{orga3.name}.png", content_type: "image/png")
+orga3.photo.attach(
+  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1657561892083x198606953326924350%2Fsite%2520copiarcafi.png?w=1024&h=589&auto=compress&dpr=2&fit=max"),
+  filename: "#{orga3.name}.png",
+  content_type: "image/png"
+)
 orga3.save!
 
 orga4 = Organisation.new(
@@ -116,13 +129,14 @@ orga4 = Organisation.new(
   address: "Brasil",
   description: "Nós, comunidades Mẽbêngôkre (ou Kayapó) criamos, em 2001, o Instituto Raoni
   para defender os interesses do nosso povo. O IR é uma Organização da Sociedade Civil de
-    Interesse Público, sem fins lucrativos e de caráter associativo e apartidário localizada
-    na cidade de Peixoto de Azevedo (MT). Hoje representamos não apenas comunidades do povo Kayapó,
-      mas também dos povos Trumai, Tapayuna e Panará, para o acesso a políticas públicas e
-      captação de recursos para fortalecer nossas atividades culturais, nossa produção de
-      alimentos, nossa geração de renda e a proteção dos nossos territórios e direitos.",
+  Interesse Público, sem fins lucrativos e de caráter associativo e apartidário localizada
+  na cidade de Peixoto de Azevedo (MT). Hoje representamos não apenas comunidades do povo Kayapó,
+  mas também dos povos Trumai, Tapayuna e Panará, para o acesso a políticas públicas e
+  captação de recursos para fortalecer nossas atividades culturais, nossa produção de
+  alimentos, nossa geração de renda e a proteção dos nossos territórios e direitos.",
   website: "https://institutoraoni.org.br",
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  email: "instituto@raoni.br"
 )
 
 orga4.photo.attach(
@@ -143,7 +157,8 @@ orga5 = Organisation.new(
   los pueblos A’i Kofan, Siona, Siekopai y Waorani, que trabaja unida para llevar alegría y salud
   a nuestras comunidades.",
   website: "https://www.alianzaceibo.org/",
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  email: "alianza@ceibo.ec"
 )
 
 orga5.photo.attach(
@@ -160,7 +175,8 @@ orga6 = Organisation.new(
   la vida y nuestras culturas para las futuras generaciones. Formamos el grupo mujeres de 6 nacionalidades
   indígenas de la Amazonia Ecuatoriana: Achuar, Shuar, Shiwiar, Kichwa, Sápara y Waorani.",
   website: "https://www.mujeresamazonicas.net/",
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  email: "mujeres@amazonicas.org"
 )
 
 orga6.photo.attach(
@@ -171,3 +187,21 @@ orga6.photo.attach(
 orga6.save!
 
 p "Created #{Organisation.count} Organisations"
+
+Organisation.all.each do |org|
+  need = Need.new(
+    name: Need::NEEDS.sample,
+    organisation: org,
+    description: Faker::Quote.matz
+  )
+  need.save!
+  puts "Need with #{need.id} was successfully saved."
+
+  post = Post.new(
+    title: Faker::Quote.yoda,
+    organisation: org,
+    content: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
+  )
+  post.save!
+  puts "Post with #{post.id} was successfully saved."
+end
