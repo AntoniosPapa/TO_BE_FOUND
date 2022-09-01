@@ -1,15 +1,24 @@
 <div class="container mt-5">
   <div class="row h-100">
+    <div class="card-profile flex-column">
+      <h2>My profile</h2>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag(current_user.photo.key, :crop => "pad", :class => "img_profile")%>
+      <% end %>
 
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag(current_user.photo.key, :width=>500, :crop=>"pad", :class => "img_profile") %>
-    <% end %>
-
-
-    <div class="card-profile col-4 rounded p-3 shadow">
+        <ul class="list-unstyled">
+          <li class="p-2"><i class="fa-regular fa-envelope"></i> <%=  current_user.email %></li>
+          <li class="p-2"><strong>Name: </strong><%=  current_user.first_name %> <%=  current_user.last_name %></li>
+          <li class="p-2"><strong>Email: </strong><%=  current_user.email %></li>
+          <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
+        </ul>
       <h3>Edit your Profile</h3>
       <%= link_to 'edit', edit_user_registration_path, class: "btn btn-success rounded-10 shadow" %>
+
     </div>
+   </div>
+  </div>
+
 
     <div class="card-profile col-4 rounded p-3 shadow">
       <h3>Create a new organization</h3>
@@ -17,21 +26,20 @@
     </div>
 
     <div class="card-profile col-4 rounded p-3 shadow">
-    <h3>add your skills</h3>
-      <%= render "skills/form", skill: @skill, organisation: @organisation %>
+
+      <h3>add your skills</h3>
+       <%= render "skills/form", skill: @skill, organisation: @organisation %>
     </div>
 
     <div class="card-profile col-4 rounded p-3 shadow">
           <p><strong>Your skillset offers</strong></p>
             <ul class="list-group">
-            <% @skills.each do |skill| %>
-          <li class="list-group-item"><%= skill.name %></li>
-          <li class="list-group-item"><%= skill.description%></li>
-        <% end %>
+              <% @skills.each do |skill| %>
+                <li class="list-group-item"><%= skill.name %></li>
+                <li class="list-group-item"><%= skill.description%></li>
+              <% end %>
             </ul>
     </div>
-
-
 
 
     <div class="card-profile col-4 rounded p-3 shadow">
@@ -53,7 +61,6 @@
             <li class="list-group-item"><%= donation.organisation.name%></li>
             <li class="list-group-item"><%= donation.quantity%> <%= donation.type_of_donation%></li>
             <li class="list-group-item"><%= donation.description%></li>
-
           <% end %>
         </ul>
     </div>
