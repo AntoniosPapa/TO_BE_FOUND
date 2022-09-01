@@ -188,6 +188,8 @@ orga6.save!
 
 p "Created #{Organisation.count} Organisations"
 
+post_photos = ["https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1652730513714x993127332238169100%2Fartigo_card_not%25C3%25ADcias_eloy_site.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://www.survivalinternational.org/assets/numiko/photos-min/tribal-lad-holding-wood-1000w@2x-min-387e14965de6fa45e1366787b1fe502e51b16b6c57e583278d802a846810ab89.jpg", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1646853185699x344022660352913540%2FDestaque_site_Reuters.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1647273943986x479408472826475400%2FFoto_Orlando_K._J%25C3%25BAniorObservat%25C3%25B3rio_BR-319.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636581032139x935986165927751400%2Fsite%2520txai.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1625681315567x579281007887117000%2Fdestaque%2520site_foto%2520eric%2520marky%2520mi%25CC%2581dia%2520i%25CC%2581ndia.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1620754233405x229092586265238430%2FFoto_-_The_Guardian_International_Rivers.jpeg.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"]
+
 Organisation.all.each do |org|
   need = Need.new(
     name: Need::NEEDS.sample,
@@ -197,13 +199,18 @@ Organisation.all.each do |org|
   need.save!
   puts "Need with #{need.id} was successfully saved."
 
-  post = Post.new(
-    title: Faker::Quote.yoda,
-    organisation: org,
-    content: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
-  )
-  post.save!
-  puts "Post with #{post.id} was successfully saved."
+  post_photos.each do |post_photo|
+    file = URI.open(post_photo)
+    post = Post.new(
+      title: Faker::Quote.yoda,
+      organisation: org,
+      content: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
+    )
+    post.photo.attach(io: file, filename: "#{post.id}.png", content_type: "image/png")
+    post.save!
+
+    puts "Post with #{post.title} was successfully saved."
+  end
 end
 
 puts 'All seeds planted successfully'
