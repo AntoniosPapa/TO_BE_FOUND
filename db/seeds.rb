@@ -205,3 +205,5 @@ Organisation.all.each do |org|
   post.save!
   puts "Post with #{post.id} was successfully saved."
 end
+
+puts 'All seeds planted successfully'
