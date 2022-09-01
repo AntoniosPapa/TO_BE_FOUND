@@ -1,9 +1,9 @@
 <div class="container mt-5">
   <div class="row h-100">
 
-    <%# if current_user.photo.attached? %>
-      <%#= cl_image_tag(current_user.photo.key, :crop => "pad", :class => "img_profile") %>
-    <%# end %>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag(current_user.photo.key, :width=>500, :crop=>"pad", :class => "img_profile") %>
+    <% end %>
 
 
     <div class="card-profile col-4 rounded p-3 shadow">
