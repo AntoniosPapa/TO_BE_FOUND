@@ -1,11 +1,26 @@
 
 
 
-.card-profile {
-  background-color: #6DB7E7;
-  // margin-top: 50px;
 
-  // padding-bottom: 50px;
-  // padding-top: 50px;
-  margin: 10px;
+.card-profile {
+  overflow: hidden;
+  // height: 120px;
+  background: 102E68;
+  box-shadow: 0 0 15px 5B82C6;
+  // display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+  // padding-left: 5px;
+  // padding-bottom: 10px;
+  padding: 30px;
+}
+
+.img_profile {
+  width: 350px;
+  height: 350px;
+  // object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 180px;
 }
