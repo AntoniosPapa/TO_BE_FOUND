@@ -1,5 +1,5 @@
 <%= simple_form_for skill do |f| %>
-          <%= f.input :name, collection: $skills %>
+          <%= f.input :name, collection: Skill::SKILLS %>
           <%= f.input :description, as: :text, placeholder: "Tell us a bit about the causes and the goals of your organisation" %>
           <%= f.submit "Submit", class: 'btn btn-success' %>
 <% end %>
