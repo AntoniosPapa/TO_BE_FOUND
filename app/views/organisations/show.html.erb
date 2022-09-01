@@ -16,14 +16,15 @@
 
 
 <div class="container p-5">
-<h3>You can donate money or your workforce here:</h3>
+<h3>You can donate money here:</h3>
   <div class="col-4">
     <div class="row">
       <%= simple_form_for [@organisation, @donation ] do |f| %>
-        <%= f.input :type_of_donation, collection: ['Money', 'Workforce'] %>
-        <%= f.input :quantity %>
+        <%= f.input :type_of_donation, collection: ['€', '$'], placeholder:'Currency' %>
+        <%= f.input :quantity, placeholder: 'Amount'  %>
         <%= f.input :description %>
-        <%= f.submit %>
+        <%= f.submit "Donate!" %>
+
       <% end %>
     </div>
   </div>
