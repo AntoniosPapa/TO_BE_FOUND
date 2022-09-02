@@ -2,8 +2,14 @@ class OrganisationsController < ApplicationController
   skip_before_action :authenticate_user!, except: :new
 
   def index
-    @organisations = Organisation.all
+    if params[:query].present?
+      # @organisations = Organisation.where("name ILIKE ?", "%#{params[:query]}%")
+      @organisations = Organisation.global_search(params[:query])
+    else
+      @organisations = Organisation.all
+    end
   end
+
 
   def show
     @organisation = Organisation.find(params[:id])

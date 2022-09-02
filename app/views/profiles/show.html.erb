@@ -3,7 +3,7 @@
     <div class="card-profile flex-column">
       <h2>My profile</h2>
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag(current_user.photo.key, :crop => "pad", :class => "img_profile")%>
+        <%= cl_image_tag(current_user.photo.key, :width => 150, :crop => "pad", :radius => "max")%>
       <% end %>
 
         <ul class="list-unstyled">
