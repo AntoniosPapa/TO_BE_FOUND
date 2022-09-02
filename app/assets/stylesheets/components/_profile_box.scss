@@ -1,0 +1,23 @@
+.profile_box {
+box-sizing: border-box;
+
+position: absolute;
+width: 337px;
+height: 750px;
+left: 199px;
+top: 268px;
+color: aliceblue;
+
+background: rgba(16, 46, 104, 0.67);
+border: 1px solid #5B82C6;
+box-shadow: 0px 4px 4px #5B82C6;
+border-radius: 15px;
+}
+
+
+profile_box {
+  a {
+    color: whitesmoke ;
+
+  }
+}
