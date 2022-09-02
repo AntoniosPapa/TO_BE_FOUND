@@ -1,0 +1,21 @@
+.skillset_box {
+box-sizing: border-box;
+
+position: absolute;
+width: 649px;
+height: 499px;
+left: 584px;
+top: 257px;
+color: aliceblue;
+
+background: rgba(16, 46, 104, 0.69);
+border: 1px solid #5B82C6;
+box-shadow: 0px 4px 4px #5B82C6;
+border-radius: 15px;
+}
+
+.skillset_box {
+  li{
+    background-color: lightblue;
+  }
+}

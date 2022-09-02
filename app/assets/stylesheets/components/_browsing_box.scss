@@ -1,0 +1,35 @@
+.browsing_box {
+  box-sizing: border-box;
+  position: absolute;
+  width: 1057px;
+  height: 258px;
+  left: 176px;
+  top: 1087px;
+  color: aliceblue;
+
+  background: rgba(16, 46, 104, 0.72);
+  border: 1px solid #5B82C6;
+  box-shadow: 0px 4px 4px #5B82C6;
+  border-radius: 15px;
+}
+
+.browsing_box {
+  a {
+    color:whitesmoke;
+    text-decoration: none;
+    font-size: medium;
+    text-align: center;
+    margin-top: 30px;
+
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+
+
+// li {
+//   color: azure;
+// }

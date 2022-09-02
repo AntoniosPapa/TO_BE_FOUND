@@ -1,11 +1,24 @@
-<%= simple_form_for organisation do |f| %>
+<%= simple_form_for organisation, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
 
-          <%= f.input :photo, as: :file %>
-          <%= f.input :name, as: :text, placeholder: "Add the name of your Organisation" %>
-          <%= f.input :address, as: :text, placeholder: "Where is your organisation located? enter the address" %>
-          <%= f.input :description, as: :text, placeholder: "Tell us a bit about the causes and the goals of your organisation" %>
-          <%= f.input :website, as: :text,  placeholder: "How can people find you and read more about you? Enter your website" %>
-          <%= f.input :email, as: :text, placeholder: "Enter email so people who are interested in your organisation can reach out to you"%>
-          <%= f.submit "Submit", class: 'btn btn-success' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :name, as: :text, placeholder: "Add the name of your Organisation" %>
+  <%= f.input :address, as: :text, placeholder: "Where is your organisation located? enter the address" %>
+  <%= f.input :description, as: :text, placeholder: "Tell us a bit about the causes and the goals of your organisation" %>
+  <%= f.input :website, as: :text,  placeholder: "How can people find you and read more about you? Enter your website" %>
+  <%= f.input :email, as: :text, placeholder: "Enter email so people who are interested in your organisation can reach out to you"%>
+  <template data-nested-form-target="template">
+    <%= f.simple_fields_for :needs, Need.new, child_index: 'NEW_RECORD' do |need_fields| %>
+      <%= render "need-form", f: need_fields %>
+    <% end %>
+  </template>
+
+  <%= f.simple_fields_for :needs do |need_fields| %>
+    <%= render "need-form", f: need_fields %>
+  <% end %>
+
+  <!-- Inserted elements will be injected before that target. -->
+  <div data-nested-form-target="target"></div>
+
+  <button type="button" data-action="nested-form#add">Add need</button>
+  <%= f.submit "Submit", class: 'btn btn-success' %>
 <% end %>
-
