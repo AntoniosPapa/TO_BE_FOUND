@@ -1,0 +1,53 @@
+.banner {
+  background:linear-gradient(0deg, #102E68, #102E68), url(landing_background.jpg);
+  background-blend-mode: hard-light, normal;
+  background-size: cover;
+  background-position: center;
+  padding: 400px 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 80px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.banner p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 80px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 15px;
+}
+
+.card {
+  margin: 10px;
+  text-align: center;
+  padding: 24px;
+}
+
+.card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+. {
+  background:linear-gradient(0deg, #102E68, #102E68), url(landing_background.jpg);
+  background-blend-mode: hard-light, normal;
+  background-size: cover;
+  background-position: center;
+  padding: 400px 0;
+  text-align: center;
+}

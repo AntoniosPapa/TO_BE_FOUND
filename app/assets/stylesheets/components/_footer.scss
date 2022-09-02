@@ -4,10 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   height: 50px;
   padding: 0px 10px;
   color: white;
-  position: relative ;
+  position: fixed;
   bottom: 0px;
 }
 .footer-links {
