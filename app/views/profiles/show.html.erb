@@ -2,8 +2,8 @@
   <div class="container mt-5" style="text-align: center">
         <h2>My profile</h2>
         <% if current_user.photo.attached? %>
-          <%= cl_image_tag(current_user.photo.key, :width =>150, :class => "user_profile_picture")%>
-        <% end %>
+        <%= cl_image_tag(current_user.photo.key, :width => 150, :crop => "pad", :radius => "max")%>
+     <% end %>
 
           <ul class="list-unstyled">
             <li class="p-2"><i class="fa-regular fa-envelope"></i> <%=  current_user.email %></li>

@@ -1,87 +1,96 @@
 <div class="p-5">
 
           <% if @organisation.photo.attached? %>
-              <%= cl_image_tag(@organisation.photo.key, :width=>500, :crop=>"pad") %>
+              <%= cl_image_tag(@organisation.photo.key, :width=> 1300, :crop=>"pad") %>
           <% end %>
 
         <h3><%= @organisation&.name&.capitalize %> </h3>
         <h3><%= @organisation&.address&.capitalize %> </h3>
         <p><%= @organisation&.description %></p>
         <%# <h4><%= @organisation&.website </h4> %>
-        <a href="<%= @organisation&.website %>" class="btn btn-success btn-sm">official website</a>
+        <a href="<%= @organisation&.website %>" class="button">Visit our official website</a>
         <h4><%= @organisation&.email %> </h4>
 
-<div class="d-flex justify-content-around">
-  <div class="container p-5">
-    <h3>You can donate money here:</h3>
-    <div class="col-4">
-      <div class="row">
-        <%= simple_form_for [@organisation, @donation ] do |f| %>
-          <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>
-          <%= f.input :quantity, label: 'Amount' %>
-          <%= f.input :description %>
-          <%= f.submit "Donate!" %>
-        <% end %>
+  <% if @organisation != current_user&.organisation %>
+    <div class="d-flex justify-content-around">
+      <div class="container p-5">
+        <h3>You can donate money here:</h3>
+        <div class="col-4">
+          <div class="row">
+            <%= simple_form_for [@organisation, @donation ] do |f| %>
+              <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>
+              <%= f.input :quantity, label: 'Amount' %>
+              <%= f.input :description %>
+              <%= f.submit "Donate!" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container p-5">
-    <h3>You can donate your workforce here:</h3>
-    <div class="col-4">
-      <div class="row">
-        <%= simple_form_for [@organisation, @donation ] do |f| %>
-          <%= f.input :type_of_donation, label: 'Skills'%>
-          <%= f.input :quantity, label: 'Amount of Hours' %>
-          <%= f.input :description,label: 'Extra informations', placeholder: 'Add extra infos in case you can offer hours, days, weeks or even months of help' %>
-          <%= f.submit "Donate!" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+  <% end %>
 
   <% if @organisation == current_user&.organisation %>
     <div class="container p-5">
-          <%= link_to "Create a new post!", new_organisation_post_path(@organisation), class: "btn btn-warning btn-sm" %>
+          <%= link_to "Create a new post!", new_organisation_post_path(@organisation), class: "button" %>
     </div>
 
     <div class="container p-5">
     <h3>Specify the needs of your organisation here:</h3>
     <%= render "needs/form", need: @need, organisation: @organisation %>
     </div>
-
   <% end %>
-
-
 
 
   <%# <%= link_to "create a post", new_organisation_post_path %>
   <div class="container p-5">
     <div class="col-4">
-      <div class="row">
         <p><strong>Skills needed for our Organisation</strong></p>
-          <ul class="list-group">
-          <% @needs.each do |need| %>
-          <li class="list-group-item"><%= need.name%></li>
-          <li class="list-group-item"><%= need.description%></li>
+        <div class="accordion" id="accordionExample">
+          <% @needs.each_with_index do |need, index| %>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading<%= index %>">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+                  <%= need.name%>
+                </button>
+              </h2>
+              <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading<%= index %>" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                <%= need.description%>
+                <%= link_to "Contact us!", organisation_post_path(@organisation.email), class: "button" %>
+                </div>
+              </div>
+            </div>
           <% end %>
-          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+
+
 
 
   <div class="container p-5">
     <div class="col-4">
+
+      <p><strong>Posts</strong></p>
       <div class="row">
-        <p><strong>Posts</strong></p>
-          <ul class="list-group">
-            <% @organisation.posts.each do |post| %>
-              <li class="list-group-item"><%= link_to post.title, organisation_post_path(@organisation, post)%> <%= post.created_at %></li>
-            <% end %>
-          </ul>
-      </div>
+          <% @organisation.posts.each do |post| %>
+            <div class="col-4">
+              <%= link_to organisation_post_path(@organisation, post) do%>
+              <div class="card-product">
+                <% if post.photo.attached? %>
+                <%= cl_image_tag post.photo.key %>
+                <% end %>
+              <div class="card-product-infos">
+                <h2><%= post.title %></h2>
+                <h3><%= post.created_at %></h3>
+                <p><%= post.content %></p>
+              </div>
+              </div>
+        <% end %>
+            </div>
+    <% end %>
     </div>
   </div>
-
 </div>
