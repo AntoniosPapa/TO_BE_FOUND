@@ -202,7 +202,7 @@ Organisation.all.each do |org|
   post_photos.each do |post_photo|
     file = URI.open(post_photo)
     post = Post.new(
-      title: Faker::Quote.yoda,
+      title: Faker::Book.title,
       organisation: org,
       content: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
     )
