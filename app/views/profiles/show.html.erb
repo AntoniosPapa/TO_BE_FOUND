@@ -1,42 +1,56 @@
-<div class ="profile_box">
-  <div class="container mt-5" style="text-align: center">
-        <h2>My profile</h2>
-        <% if current_user.photo.attached? %>
-        <%= cl_image_tag(current_user.photo.key, :width => 150, :crop => "pad", :radius => "max")%>
-     <% end %>
-
-          <ul class="list-unstyled">
-            <li class="p-2"><i class="fa-regular fa-envelope"></i> <%=  current_user.email %></li>
-            <li class="p-2"><strong>Name: </strong><%=  current_user.first_name %> <%=  current_user.last_name %></li>
-            <li class="p-2"><strong>Email: </strong><%=  current_user.email %></li>
-            <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
-          </ul>
-        <h3>Edit your Profile</h3>
-        <%= link_to 'edit', edit_user_registration_path, class: 'tbf_button' %>
-  </div>
-</div>
-
-
-    <div class="create_org_button m-5">
+<div class="container mx-auto">
+  <div class="d-flex justify-content-end">
+    <div class="create_org_button my-3">
       <%= link_to 'Create organisation ', new_organisation_path %>
     </div>
+  </div>
+  <div class="d-flex justify-content-between my-3">
+    <div class ="profile_box p-4">
+      <div class="container mt-5" style="text-align: center">
+        <h2>My profile</h2>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag(current_user.photo.key, :width => 150, :crop => "pad", :radius => "max")%>
+        <% end %>
 
-<div class="skillset_box" style="text-align: center">
-    <div class="container mt-5">
-      <h3>add your skills</h3>
-       <%= render "skills/form", skill: @skill, organisation: @organisation %>
-            -------------------------------
+        <ul class="list-unstyled">
+          <li class="p-2"><i class="fa-regular fa-envelope"></i> <%=  current_user.email %></li>
+          <li class="p-2"><strong>Name: </strong><%=  current_user.first_name %> <%=  current_user.last_name %></li>
+          <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
+        </ul>
+        <%= link_to 'edit', edit_user_registration_path, class: 'tbf_button' %>
+      </div>
+    </div>
+    <div class="flex-grow-1 ps-3">
+      <div class="skillset_box p-4" style="text-align: center">
+        <div class="container mt-5">
+          <h3>add your skills</h3>
+          <%= render "skills/form", skill: @skill, organisation: @organisation %>
           <p><strong>Your skillset offers</strong></p>
-            <ul class="list-group">
-              <% @skills.each do |skill| %>
-                <li class="list-group-item"><%= skill.name %></li>
-                <li class="list-group-item"><%= skill.description%></li>
+          <ul class="list-group">
+            <% @skills.each do |skill| %>
+              <li class="list-group-item"><%= skill.name %></li>
+              <li class="list-group-item"><%= skill.description%></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="donations_box mt-4 p-4" style="text-align: center">
+        <div class="container m-5">
+          <p><strong>Your donations</strong></p>
+            <ul class="list-group pb-6 m-4">
+              <% @profile.donations.each do |donation| %>
+                <li class="list-group-item"><%= donation.organisation.name%></li>
+                <li class="list-group-item"><%= donation.quantity%> <%= donation.type_of_donation%></li>
+                <li class="list-group-item"><%= donation.description%></li>
               <% end %>
             </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-<div class="browsing_box" style="text-align: center">
+  <div class="browsing_box my-3 p-4" style="text-align: center">
     <div class="container">
       <h3>Browse through:</h3>
       <ul>
@@ -45,17 +59,5 @@
         <li><%= link_to 'Edit my organisation', edit_organisation_path(current_user), class: "list-unstyled" %></li>
       </ul>
     </div>
-</div>
-
-<div class="donations_box" style="text-align: center">
-  <div class="container m-5">
-    <p><strong>Your donations</strong></p>
-      <ul class="list-group pb-6 m-4">
-        <% @profile.donations.each do |donation| %>
-          <li class="list-group-item"><%= donation.organisation.name%></li>
-          <li class="list-group-item"><%= donation.quantity%> <%= donation.type_of_donation%></li>
-          <li class="list-group-item"><%= donation.description%></li>
-        <% end %>
-      </ul>
   </div>
 </div>
