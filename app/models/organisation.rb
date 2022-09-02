@@ -4,4 +4,14 @@ class Organisation < ApplicationRecord
   has_many :donations, dependent: :destroy
   has_one_attached :photo
   has_many :needs
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name ],
+      associated_against: {
+      needs: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

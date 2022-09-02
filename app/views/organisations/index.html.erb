@@ -2,7 +2,18 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
       Organisations you can find through our website
     </div>
-  </div>
+</div>
+
+<div class="container p-5">
+  <%= form_with url: organisations_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Seach for organisation or need(proffesion)"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
 <div class="container p-5">
   <div class="row">
