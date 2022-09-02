@@ -1,6 +1,6 @@
 .footer {
   // width: 100vw !important;
-  background: #235696;
+  background: #002f6c;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,7 +8,7 @@
   height: 50px;
   padding: 0px 10px;
   color: white;
-  position: fixed;
+  position:inherit;
   bottom: 0px;
 }
 .footer-links {

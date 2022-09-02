@@ -12,7 +12,8 @@
 
   <div class="cards">
     <div class="card">
-    <img src="logo.jpg" alt="connect">
+    <%# <img src="logo.jpg" alt="connect"> %>
+    <%= image_tag "signup.png" %>
     <h2>Sign up</h2>
     <p>Sign up and create your profile to directly help the people who are in need.</p>
     </div>
@@ -28,7 +29,8 @@
     </div>
   </div>
 
-  <div class="banner">
+  <div class="org_btn_background">
   <img src="//app/assets/images/check_out_orgs.png" alt="">
-  <%= link_to "check out  all the organisations", organisations_path(@user), class: "btn btn-success btn-sm" %>
+  <h2>Take a look at local groups, NGOs, and other organisations who are making a difference in the Amazon forest</h2>
+  <%= link_to "Explore Organisations", organisations_path(@user), class:"button" %>
   </div>

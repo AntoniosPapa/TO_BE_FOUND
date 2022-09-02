@@ -28,7 +28,8 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 15px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .card {
@@ -43,11 +44,15 @@
   object-fit: cover;
 }
 
-. {
-  background:linear-gradient(0deg, #102E68, #102E68), url(landing_background.jpg);
+.org_btn_background {
+  background: url(check_out_orgs.png);
   background-blend-mode: hard-light, normal;
   background-size: cover;
   background-position: center;
   padding: 400px 0;
   text-align: center;
+}
+
+h2 {
+  color: #002f6c;
 }
