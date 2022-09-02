@@ -1,0 +1,7 @@
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <%= f.input :name, collection: Need::NEEDS, label: 'Speciality of Workforce '  %>
+          <%= f.input :description, as: :text, placeholder: "Describe specificaly the needs your organisation has and the kind of skillsets you would like the people who are gonna give their skills for your organisation, should have." %>
+  <button type="button" data-action="nested-form#remove">Remove todo</button>
+
+  <%= f.hidden_field :_destroy %>
+</div>

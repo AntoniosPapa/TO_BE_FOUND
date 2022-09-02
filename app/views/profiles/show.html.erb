@@ -9,11 +9,13 @@
         <ul class="list-unstyled">
           <li class="p-2"><i class="fa-regular fa-envelope"></i> <%=  current_user.email %></li>
           <li class="p-2"><strong>Name: </strong><%=  current_user.first_name %> <%=  current_user.last_name %></li>
-          <li class="p-2"><strong>Email: </strong><%=  current_user.email %></li>
           <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
         </ul>
-      <h3>Edit your Profile</h3>
-      <%= link_to 'edit', edit_user_registration_path, class: "btn btn-success rounded-10 shadow" %>
+
+    <h3>Edit your Profile</h3>
+    <%= link_to 'edit', edit_user_registration_path, class: "btn btn-success rounded-10 shadow" %>
+
+
 
     </div>
    </div>

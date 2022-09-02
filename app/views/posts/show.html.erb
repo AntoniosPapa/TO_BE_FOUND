@@ -1,9 +1,12 @@
-<h1><%= @post.title %></h1>
 
-<h2><%= @post.content %></h2>
+<div class="container p-5">
+  <div class="card-product">
+    <% if @post.photo.attached? %>
+    <%= cl_image_tag @post.photo.key %>
+    <% end %>
 
-<% if @post.photo.attached? %>
-<%= cl_image_tag @post.photo.key %>
-
-<% end %>
-
+    <h1><%= @post.title %></h1>
+    <h3><%= @post.created_at %></h3>
+    <p><%= @post.content %></p>
+  </div>
+</div>
