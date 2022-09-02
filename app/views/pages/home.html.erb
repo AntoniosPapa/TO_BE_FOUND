@@ -12,24 +12,31 @@
 
   <div class="cards">
     <div class="card">
-    <%= image_tag "sign_up.png" %>
-    <h2>Sign up</h2>
-    <p>Sign up and create your profile to directly help the people who are in need.</p>
+      <div class="mx-auto">
+        <%= image_tag "sign_up.png" %>
+      </div>
+        <h2>Sign up</h2>
+        <p>Sign up and create your profile to directly help the people who are in need.</p>
+    </div>
+
+    <div class="card">
+      <div class="mx-auto">
+        <%= image_tag "donate.png" %>
+      </div>
+     <h2>Donate</h2>
+      <p>Donate directly to the people who are in need.</p>
     </div>
     <div class="card">
-    <%= image_tag "donate.png" %>
-    <h2>Donate</h2>
-    <p>Donate directly to the people who are in need.</p>
-    </div>
-    <div class="card">
-    <%= image_tag "help.png" %>
-    <h2>Help</h2>
-    <p>Offer your skills to help the people who are in need.</p>
+        <div class="mx-auto">
+          <%= image_tag "help.png" %>
+        </div>
+      <h2>Help</h2>
+      <p>Offer your skills to help the people who are in need.</p>
     </div>
   </div>
 
   <div class="org_btn_background">
   <img src="//app/assets/images/check_out_orgs.png" alt="">
-  <h2>Take a look at local groups, NGOs, and other organisations who are making a difference in the Amazon forest</h2>
+  <h2>Take a look at local groups, NGOs, and other organisations who are making a difference in the Amazon forest.</h2>
   <%= link_to "Explore Organisations", organisations_path(@user), class:"button" %>
   </div>
