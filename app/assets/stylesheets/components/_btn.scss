@@ -1,0 +1,49 @@
+.button {
+  text-decoration: none;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 16px 39px 16px 40px;
+  gap: 8px;
+
+  width: 191px;
+  height: 58px;
+
+  background: #102E68;
+  border: 2px solid #5B82C6;
+  border-radius: 10px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  color: white;
+  font-weight: 300;
+  font-size: medium;
+}
+
+.button:hover {
+  color: lightgray;
+}
+
+// .org_btn_background button {
+//   text-decoration: none;
+//   box-sizing: border-box;
+//   align-items: center;
+//   padding: 20px 45px 20px 45px;
+//   gap: 8px;
+
+//   width: 191px;
+//   height: 58px;
+
+//   background: #102E68;
+//   border: 2px solid #5B82C6;
+//   border-radius: 10px;
+
+//   /* Inside auto layout */
+
+//   flex: none;
+//   order: 1;
+//   flex-grow: 0;
+//   color: inherit;
+// }
