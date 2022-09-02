@@ -1,4 +1,4 @@
 class Need < ApplicationRecord
   belongs_to :organisation
-  NEEDS = ["Photography", "Videography", "Construction Work", "Legal Advice"]
+  NEEDS = ["Photographer", "Videographer", "Construction Helpers", "Legal Advisor", "Cook", "Echologist", "Botanologist", "Web Developer", "Medic", "Architect" ]
 end
