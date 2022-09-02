@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  # skip_before_action :authenticate_user!, except: :new
+  skip_before_action :authenticate_user!, except: :new
 
   def index
     @posts = Post.all
