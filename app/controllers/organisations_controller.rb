@@ -16,6 +16,8 @@ class OrganisationsController < ApplicationController
     @donation = Donation.new
     @need = Need.new
     @needs = @organisation.needs
+    @post = Post.new
+    @post = @organisation.posts
   end
 
   def new
@@ -50,6 +52,6 @@ class OrganisationsController < ApplicationController
   end
 
   def organisation_params
-    params.require(:organisation).permit(:name, :address, :description, :photo, :website, :email)
+    params.require(:organisation).permit(:name, :address, :description, :photo, :website, :email, needs_attributes: [:id, :_destroy, :description, :name])
   end
 end
