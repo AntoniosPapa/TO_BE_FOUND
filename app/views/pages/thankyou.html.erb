@@ -1,8 +1,13 @@
-<h1>Thank you for your donation.</h1>
-<p></p>
-<h3>You have just helped our organisation to get a step closer to our goal.</h3>
-
-
-<div class="container p-5">
-      <%= link_to "check out other organisations you would like to help", organisations_path(@user), class: "btn btn-warning btn-lg" %>
+<div class="container m-5 mx-auto text-center">
+<h1>Thank you for your donation!</h1>
+<br>
+<h5>You just helped our organisation become one step closer to our goal.</h5>
+<br>
+<br>
+<%= link_to "Check out other organisations you would like to help", organisations_path(@user), class: "button" %>
+<br>
+<br>
+<br>
+<br>
+<%= link_to "Go back to your profile", profile_path, class:"button" %>
 </div>
