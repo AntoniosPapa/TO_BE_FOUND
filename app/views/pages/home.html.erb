@@ -3,7 +3,11 @@
     <div class="">
      <h1>To Be Found</h1>
       <p>Give help directly to those that need help in the Amazon rainforest area.</p>
-      <%= link_to "Sign up", new_user_registration_path, class:"button" %>
+      <% if current_user %>
+        <%= link_to "Explore", organisations_path, class:"button" %>
+        <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class:"button" %>
+        <% end %>
     </div>
   </div>
 
@@ -12,8 +16,8 @@
       <div class="mx-auto">
         <%= image_tag "sign_up.png" %>
       </div>
-        <h2>Sign up</h2>
-        <p>Sign up and create your profile to directly help the people who are in need.</p>
+        <h2>Explore</h2>
+        <p>Explore the different local organisations fighting to save the Amazon rainforest.</p>
     </div>
 
     <div class="card">
