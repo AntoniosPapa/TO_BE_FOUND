@@ -17,15 +17,15 @@
           <li class="p-2"><strong>Name: </strong><%=  current_user.first_name %> <%=  current_user.last_name %></li>
           <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
         </ul>
-        <%= link_to 'edit', edit_user_registration_path, class: 'tbf_button' %>
+        <%= link_to 'Edit', edit_user_registration_path, class: 'button' %>
       </div>
     </div>
     <div class="flex-grow-1 ps-3">
       <div class="skillset_box p-4" style="text-align: center">
         <div class="container mt-5">
-          <h3>add your skills</h3>
+          <h3>Add your skills</h3>
           <%= render "skills/form", skill: @skill, organisation: @organisation %>
-          <p><strong>Your skillset offers</strong></p>
+          <p class="mt-4"><strong>Your skills:</strong></p>
           <ul class="list-group">
             <% @skills.each do |skill| %>
               <li class="list-group-item"><%= skill.name %></li>
@@ -36,8 +36,8 @@
       </div>
 
       <div class="donations_box mt-4 p-4" style="text-align: center">
-        <div class="container m-5">
-          <p><strong>Your donations</strong></p>
+        <div class="container m-2">
+          <p><strong>Your donations:</strong></p>
             <ul class="list-group pb-6 m-4">
               <% @profile.donations.each do |donation| %>
                 <li class="list-group-item"><%= donation.organisation.name%></li>
