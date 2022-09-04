@@ -1,33 +1,36 @@
 <div class="p-5">
+  <div class="d-flex justify-content-center">
+    <% if @organisation.photo.attached? %>
+        <%= cl_image_tag(@organisation.photo.key, :width=> 1000, :crop=>"pad", :radius=>10) %>
+    <% end %>
+  </div>
 
-          <% if @organisation.photo.attached? %>
-              <%= cl_image_tag(@organisation.photo.key, :width=> 1300, :crop=>"pad") %>
-          <% end %>
-
-        <h3><%= @organisation&.name&.capitalize %> </h3>
-        <h3><%= @organisation&.address&.capitalize %> </h3>
-        <p><%= @organisation&.description %></p>
-        <%# <h4><%= @organisation&.website </h4> %>
-        <a href="<%= @organisation&.website %>" class="button">Visit our official website</a>
-        <h4><%= @organisation&.email %> </h4>
-
-  <% if @organisation != current_user&.organisation %>
-    <div class="d-flex justify-content-around">
-      <div class="container p-5">
-        <h3>You can donate money here:</h3>
-        <div class="col-4">
-          <div class="row">
-            <%= simple_form_for [@organisation, @donation ] do |f| %>
-              <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>
-              <%= f.input :quantity, label: 'Amount' %>
-              <%= f.input :description %>
-              <%= f.submit "Donate!", class:"button" %>
-            <% end %>
+  <div class="container my-4">
+    <h3><%= @organisation&.name&.capitalize %></h3>
+    <h5><%= @organisation&.address&.capitalize %></h5>
+    <p><%= @organisation&.description %></p>
+    <%# <h4><%= @organisation&.website </h4> %>
+    <h5><%= @organisation&.email %> </h5>
+    <br>
+    <a href="<%= @organisation&.website %>" class="button">Visit our official website</a>
+  </div>
+    <% if @organisation != current_user&.organisation %>
+      <div class="d-flex justify-content-around">
+        <div class="container p-5">
+          <h3>You can donate money here:</h3>
+          <div class="col-4">
+            <div class="row">
+              <%= simple_form_for [@organisation, @donation ] do |f| %>
+                <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>
+                <%= f.input :quantity, label: 'Amount' %>
+                <%= f.input :description %>
+                <%= f.submit "Donate!", class:"button" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
   <% if @organisation == current_user&.organisation %>
     <div class="container p-5">
@@ -65,10 +68,6 @@
       </div>
     </div>
   </div>
-
-
-
-
 
   <div class="container p-5">
     <div class="col-4">
