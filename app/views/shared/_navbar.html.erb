@@ -23,6 +23,7 @@
           <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", profile_path(@user), class: "dropdown-item" %>
+              <%= link_to "My organisation", organisation_path(@organisation), class: "dropdown-item" %>
               <%= link_to "Organisations", organisations_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
