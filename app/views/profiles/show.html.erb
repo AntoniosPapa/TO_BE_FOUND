@@ -4,7 +4,7 @@
         <% if @organisation.nil? %>
           <%= link_to 'Create organisation ', new_organisation_path, class:"button" %>
         <% else %>
-          <%= link_to "View/edit organisation", organisations_path,  class:"button" %>
+          <%= link_to "Edit organisation", edit_organisation_path(@organisation),  class:"button" %>
         <% end %>
     </div>
   </div>
