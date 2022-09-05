@@ -162,7 +162,7 @@ orga5 = Organisation.new(
 )
 
 orga5.photo.attach(
-  io: URI.open("https://www.alianzaceibo.org/m3di4/alianzafoto1.png"),
+  io: URI.open("https://www.alianzaceibo.org/m3di4/WhatsApp-Image-2022-01-27-at-10.37.19-AM.jpeg"),
   filename: "#{orga3.name}.png",
   content_type: "image/png"
 )
