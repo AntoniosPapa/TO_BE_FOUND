@@ -1,18 +1,20 @@
 .card-product {
-  overflow: hidden;
-  height: 200px;
+  // overflow: hidden;
+  height: 220px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 10px;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-product img {
   height: 100%;
   width: 240px;
   object-fit: cover;
+  border-radius: 10px;
 }
 .card-product h2 {
   font-size: 16px;
@@ -39,4 +41,52 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none !important;
+  text-align: center;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.donation-border {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.org-show h3 {
+  color: #002f6c;
+}
+
+.org-show h5 {
+  color: #01579b;
+}
+
+.org-show p {
+  color: #002f6c;
+}
+
+.form-label {
+  color: #002f6c !important;
 }
