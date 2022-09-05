@@ -1,12 +1,31 @@
-
 <div class="container p-5">
-  <div class="card-product">
-    <% if @post.photo.attached? %>
-    <%= cl_image_tag @post.photo.key %>
-    <% end %>
+  <div class="row card-post">
 
-    <h1><%= @post.title %></h1>
-    <h3><%= @post.created_at %></h3>
-    <p><%= @post.content %></p>
+    <div class="col-xs-12 col-lg-4">
+      <% if @post.photo.attached? %>
+        <%= cl_image_tag @post.photo.key %>
+      <% end %>
+    </div>
+
+    <div class="col-xs-12 col-lg-8">
+      <h1><%= @post.title %></h1>
+      <p id="date"><%= @post.created_at.strftime("%A, %b %d") %></p>
+      <p><%= @post.content %></p>
+    </div>
+
   </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div  class="text-center">
+              <%= link_to 'Back', organisation_path(@organisation), class: "button" %>
+
+              <% if @organisation == current_user&.organisation %>
+                <%= link_to 'Edit', edit_organisation_post_path(@organisation, @post), class: "button" %>
+              <% end %>
+            </div>
+        </div>
+    </div>
 </div>
