@@ -43,7 +43,7 @@ user_photos.each do |user_photo|
   puts "#{user.first_name} was successfully saved."
 
   skill = Skill.new(
-    name: Skill::SKILLS.sample,
+    name: Skill::SKILLS_AND_ICONS.keys,
     user_id: User.all.sample.id,
     description: Faker::Quote.most_interesting_man_in_the_world
   )
@@ -192,7 +192,7 @@ post_photos = ["https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws
 
 Organisation.all.each do |org|
   need = Need.new(
-    name: Need::NEEDS.sample,
+    name: Need::NEEDS_AND_ICONS.keys,
     organisation: org,
     description: Faker::Quote.matz
   )
