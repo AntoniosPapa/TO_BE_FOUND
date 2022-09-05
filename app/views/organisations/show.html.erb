@@ -6,15 +6,15 @@
 </div>
 
 
-<div class="container">
+<div class="container org-show">
   <div class="row">
-    <div class="col-12 col-lg-8">
+    <div class=" col-12 col-lg-8">
       <h3><%= @organisation&.name&.capitalize %></h3>
-      <h5><%= @organisation&.address&.capitalize %></h5>
+      <h5></i><%= @organisation&.address&.capitalize %></h5>
       <p><%= @organisation&.description %></p>
       <h5><%= @organisation&.email %> </h5>
       <br>
-      <a href="<%= @organisation&.website %>" class="button">Visit our official website</a>
+      <a href="<%= @organisation&.website %>">Visit our official website</a>
 
       <% if @organisation == current_user&.organisation %>
         <div class="container p-5">
@@ -79,7 +79,7 @@
 
     <div class="col-12 col-lg-4">
       <% if @organisation != current_user&.organisation %>
-          <div class="container p-5 sticky-top border radius-4">
+          <div class=" donation-border container p-5 sticky-top border radius-4">
             <h3>Donate:</h3>
               <%= simple_form_for [@organisation, @donation ] do |f| %>
                 <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>

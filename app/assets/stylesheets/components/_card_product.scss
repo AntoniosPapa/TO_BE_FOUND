@@ -7,6 +7,7 @@
   align-items: center;
   margin-bottom: 10px;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-product img {
@@ -45,7 +46,7 @@
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 16px;
 }
 
 .card-category {
@@ -62,4 +63,30 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none !important;
+  text-align: center;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.donation-border {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.org-show h3 {
+  color: #002f6c;
+}
+
+.org-show h5 {
+  color: #01579b;
+}
+
+.org-show p {
+  color: #002f6c;
+}
+
+.form-label {
+  color: #002f6c !important;
 }
