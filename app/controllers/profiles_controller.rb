@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
     @profile = current_user
     @skill = Skill.new
     @skills = Skill.where(user: @profile)
+    @organisation = current_user.organisation
   end
 
 

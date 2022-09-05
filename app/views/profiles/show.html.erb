@@ -1,10 +1,10 @@
 <div class="container mx-auto m-5">
   <div class="d-flex justify-content-end">
     <div class="my-4">
-        <% if @organisation != current_user&.organisation %>
-        <%= link_to "View/edit organisation", organisations_path,  class:"button" %>
+        <% if @organisation.nil? %>
+          <%= link_to 'Create organisation ', new_organisation_path, class:"button" %>
         <% else %>
-        <%= link_to 'Create organisation ', new_organisation_path, class:"button" %>
+          <%= link_to "View/edit organisation", organisations_path,  class:"button" %>
         <% end %>
     </div>
   </div>
@@ -22,40 +22,42 @@
           <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
         </ul>
         <%= link_to 'Edit', edit_user_registration_path, class: 'button' %>
-      </div>
-    </div>
-
-    <div class="flex-grow-1 ps-3">
-      <div class="skillset_box p-4" style="text-align: center">
-        <div class="container mt-5">
-        <h2>Add your skills</h2>
+          <p class="pt-5 mt-3"><%= image_tag 'strong.png', width: 50, height:50 %> <h2>Add your skills</h2>
+</p>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   <h6>Skills to offer</h6>
                 </button>
               </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <%= render "skills/form", skill: @skill, organisation: @organisation %>
                 </div>
               </div>
             </div>
           </div>
-          <p class="mt-4"><h2>Your skills</h2></p>
+      </div>
+    </div>
+
+    <div class="flex-grow-1 ps-3">
+      <div class="skillset_box p-4" style="text-align: center">
+        <div class="container mt-5">
+          <p class="p-2 m-3"><%= image_tag 'skills.png', width: 50, height:50 %><h2>Your skills</h2></p>
           <ul class="list-group">
             <% @skills.each do |skill| %>
-              <li class="list-group-item"><i class="fa-solid fa-hand-fist"></i><strong><%= skill.name %></strong></li>
+              <li class="list-group-item"> <%= image_tag Skill::SKILLS_AND_ICONS[skill.name] %> <strong><%= skill.name %></strong></li>
               <li class="list-group-item"><%= skill.description%></li>
               <br>
             <% end %>
           </ul>
         </div>
       </div>
+
       <div class="donations_box mt-4 p-4" style="text-align: center">
         <div class="container m-2">
-          <p><h2>Your donations</h2></p>
+          <p> <%= image_tag 'donate small.png', width: 40, height:40 %><h2>Your donations</h2></p>
             <ul class="list-group pb-6 pt-1">
               <% @profile.donations.each do |donation| %>
                 <li class="list-group-item"><strong><%= donation.organisation.name%></strong> <i class="fa-solid fa-hand-holding-dollar"></i></li>
@@ -65,6 +67,22 @@
             </ul>
         </div>
       </div>
+
+      <% unless @organisation.nil?  %>
+        <div class="donations_box mt-4 p-4" style="text-align: center">
+          <div class="container m-2">
+          <%= image_tag 'donations received small.png', width: 50, height:50 %><h2>Donations you have received</h2>
+            <ul class="list-group pb-6 pt-1">
+              <% @organisation&.donations&.each do |donation| %>
+                  <li class="list-group-item"> The user <strong><%= donation.user.email %></strong> donated to  <strong><%= donation.organisation.name %></strong></li>
+                  <li class="list-group-item">the amount of <strong><%= donation.quantity %></strong></li>
+                  <br>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+
     </div>
   </div>
 </div>

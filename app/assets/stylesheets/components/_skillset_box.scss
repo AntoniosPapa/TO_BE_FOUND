@@ -7,11 +7,26 @@ box-sizing: border-box;
 // left: 584px;
 // top: 257px;
 color: aliceblue;
-
 background: #4f83cc;
 border: 1px solid #5B82C6;
 box-shadow: 0px 4px 4px #5B82C6;
 border-radius: 15px;
+}
+
+.skillset_box {
+  li {
+    color:#5B82C6;
+    background-color: whitesmoke;
+    opacity: 0.95;
+    border-radius: 4px;
+    border-style: groove;
+    border-color:#D9A21B ;
+    border-color:#73FAC9 ;
+
+    border-width: medium;
+    // width: 800px;
+    text-align: center;
+  }
 }
 
 .skillset_box {
