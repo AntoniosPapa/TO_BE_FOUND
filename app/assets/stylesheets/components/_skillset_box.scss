@@ -8,14 +8,21 @@ box-sizing: border-box;
 // top: 257px;
 color: aliceblue;
 
-background: rgba(16, 46, 104, 0.69);
+background: #4f83cc;
 border: 1px solid #5B82C6;
 box-shadow: 0px 4px 4px #5B82C6;
 border-radius: 15px;
 }
 
 .skillset_box {
-  li{
-    background-color: lightblue;
+  h2 {
+    color: whitesmoke ;
+
+  }
+}
+.skillset_box {
+  h6 {
+    color:#002f6c;
+
   }
 }

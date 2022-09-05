@@ -7,16 +7,21 @@ box-sizing: border-box;
 // left: 199px;
 // top: 268px;
 color: aliceblue;
-
-background: rgba(16, 46, 104, 0.67);
+background: #4f83cc;
 border: 1px solid #5B82C6;
 box-shadow: 0px 4px 4px #5B82C6;
 border-radius: 15px;
 }
 
-
-profile_box {
+.profile_box {
   a {
+    color: whitesmoke ;
+
+  }
+}
+
+.profile_box {
+  h2 {
     color: whitesmoke ;
 
   }
