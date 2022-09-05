@@ -2,10 +2,9 @@
   <div class="d-flex justify-content-end">
     <div class="my-4">
         <% if @organisation.nil? %>
-          <%= link_to 'Create organisation ', new_organisation_path, class:"button" %>
+          <%= link_to 'Create organisation ', new_organisation_path(@organisation), class:"button" %>
         <% else %>
           <%= link_to "Edit organisation", edit_organisation_path(@organisation),  class:"button" %>
-        <% end %>
     </div>
   </div>
   <div class="d-flex justify-content-between my-3">
@@ -43,8 +42,8 @@
 
     <div class="flex-grow-1 ps-3">
       <div class="skillset_box p-4" style="text-align: center">
-        <div class="container mt-5">
-          <p class="p-2 m-3"><%= image_tag 'skills.png', width: 50, height:50 %><h2>Your skills</h2></p>
+        <div class="container m-2">
+          <p class="p-2 m-3"><%= image_tag 'skills.png', width: 40, height:40 %><h2>Your skills</h2></p>
           <ul class="list-group">
             <% @skills.each do |skill| %>
               <li class="list-group-item"> <%= image_tag Skill::SKILLS_AND_ICONS[skill.name] %> <strong><%= skill.name %></strong></li>
@@ -75,7 +74,7 @@
             <ul class="list-group pb-6 pt-1">
               <% @organisation&.donations&.each do |donation| %>
                   <li class="list-group-item"> The user <strong><%= donation.user.email %></strong> donated to  <strong><%= donation.organisation.name %></strong></li>
-                  <li class="list-group-item">the amount of <strong><%= donation.quantity %></strong></li>
+                  <li class="list-group-item">Amount: <strong><%= donation.quantity%></strong></li>
                   <br>
               <% end %>
             </ul>
