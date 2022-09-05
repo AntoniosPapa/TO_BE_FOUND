@@ -1,0 +1,86 @@
+.banner {
+  background: linear-gradient(0deg, #102E68, #102E68), url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
+  background-blend-mode: hard-light, normal;
+  background-size: cover;
+  background-position: center;
+  padding: 400px 0;
+  text-align: center;
+}
+
+.banner h2 {
+  color: white;
+  font-size: 35px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-organisation {
+  font-size: 1em;
+  overflow: hidden;
+  padding: 0;
+  border: 4px #102E68;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  height: 500px;
+}
+
+.card-organisation-block {
+  color: #5B82C6;
+  font-size: 1em;
+  position: relative;
+  margin: 1em;
+  padding: 0.5em;
+  height: 250px;
+  border: 2px #102E68;
+  text-decoration: none;
+  text-align: left justify;
+  box-shadow: none;
+}
+
+.card-organisation-img {
+  display: block;
+  width: 100%;
+  height: 50%;
+}
+
+.card-organisation p {
+  font-size: 16px;
+  line-height: 1.3;
+  opacity: .8;
+  margin-bottom: 0;
+  margin-top: 4px;
+  color: #102E68
+}
+
+.card-organisation h2 {
+  font-size: 24px;
+  color: white;
+}
+
+.card-organisation h5 {
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 0;
+  margin-top: 4px;
+  color: #102E68
+}
+
+.card-organisation h6 {
+  font-size: 14px;
+  line-height: 1.3;
+  opacity: .8;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+.card-organisation:hover {
+  box-shadow: 0 0 8px 8px #5B82C6, 0 0 8px 8px #5B82C6;
+}
+
+a {
+  text-decoration: none !important;
+}

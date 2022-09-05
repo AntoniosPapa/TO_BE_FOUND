@@ -1,35 +1,35 @@
 <div class="row" >
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
-      Organisations you can find through our website
-    </div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+    <h2>Organisations you can find through our website</h2>
+  </div>
 </div>
 
-<div class="container p-5">
-  <%= form_with url: organisations_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Seach for organisation or need(proffesion)"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-</div>
+ <div class="container p-5">
+    <%= form_with url: organisations_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for organisation or need(profession)"
+      %>
+      <%= submit_tag "Search", class: "button" %>
+    <% end %>
+  </div>
 
 <div class="container p-5">
   <div class="row">
     <% @organisations.each do |organisation|%>
-      <div class="col-12">
+      <div class="col-4">
         <%= link_to organisation_path(organisation) do %>
-          <div class="card-product">
+          <div class="card-organisation mb-5 mx-2">
             <% if organisation.photo.attached? %>
-              <%= cl_image_tag organisation.photo.key %>
+              <%= cl_image_tag(organisation.photo.key, :crop => "pad", :class => "card-organisation-img") %>
             <% end %>
-            <div class="card-product-infos">
-              <h2><%= organisation.name %></h2>
-              <h3> <%= organisation.address %></h3>
-              <p> <%= organisation.description %></p>
-              <p> <%= organisation.website %></p>
-              <p> <%= organisation.email %></p>
+            <div class="card-organisation-block">
+              <h5><%= organisation.name %></h5>
+              <h6><%= organisation.address %></h6>
+              <p><%= organisation.description.truncate(200)%></p>
+              <h6><strong>Website: </strong><%= organisation.website %></h6>
+              <h6><strong>E-mail: </strong><%= organisation.email %></h6>
             </div>
           </div>
         <% end %>
