@@ -1,13 +1,13 @@
 class Need < ApplicationRecord
-  belongs_to :organisation 
-  NEEDS_AND_ICONS = { "Photographer" => "photographer.png",
-    "Videographer" => "videographer.png",
-    "Construction Helpers" => "construction-worker.png",
-    "Legal Advisor" => "lawyer.png",
+  belongs_to :organisation
+  NEEDS_AND_ICONS = { "Photography" => "photographer.png",
+    "Videography" => "videographer.png",
+    "Construction Work" => "construction-worker.png",
+    "Legal Advice" => "lawyer.png",
     "Cook" => "cook.png",
-    "Ecologist" => "ecologist.png",
-    "Botanologist" => "botanologist.png",
-    "Web Developer" => "web-developer.png",
-    "Medic" => "medic.png",
-    "Architect" => "architect.png"}
+    "Ecology" => "ecologist.png",
+    "Botany" => "botanologist.png",
+    "Web Development" => "web-developer.png",
+    "Health Services" => "medic.png",
+    "Architecture" => "architect.png"}
 end
