@@ -29,13 +29,13 @@
 
 
       <%# <%= link_to "create a post", new_organisation_post_path %>
-      <div class="container my-5">
-        <p><strong>Skills needed for our Organisation</strong></p>
+      <div class="my-5">
+        <h3>Skills Needed for our Organisation</h3>
         <div class="accordion" id="accordionExample">
           <% @needs.each_with_index do |need, index| %>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="heading<%= index %>">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+              <h2 class="accordion-header pb-2" id="heading<%= index %>">
+                <button class="accordion-button ab-skills collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
                   <%= need.name%>
                 </button>
               </h2>
@@ -51,12 +51,35 @@
           <% end %>
         </div>
       </div>
+
+      <div class="col-4">
+        <h3>Posts</h3>
+        <div class="row">
+            <% @organisation.posts.each do |post| %>
+              <div class="col-4">
+                <%= link_to organisation_post_path(@organisation, post) do%>
+                <div class="card-product">
+                  <% if post.photo.attached? %>
+                  <%= cl_image_tag post.photo.key %>
+                  <% end %>
+                <div class="card-product-infos">
+                  <h2><%= post.title %></h2>
+                  <h3><%= post.created_at %></h3>
+                  <p><%= post.content %></p>
+                </div>
+                </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      </div>
     </div>
+
 
     <div class="col-12 col-lg-4">
       <% if @organisation != current_user&.organisation %>
-          <div class="container p-5">
-            <h3>You can donate money here:</h3>
+          <div class="container p-5 sticky-top border radius-4">
+            <h3>Donate:</h3>
               <%= simple_form_for [@organisation, @donation ] do |f| %>
                 <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>
                 <%= f.input :quantity, label: 'Amount' %>
@@ -67,30 +90,6 @@
               <% end %>
           </div>
         <% end %>
-    </div>
-  </div>
-</div>
-
-  <div class="container p-5">
-    <div class="col-4">
-      <p><strong>Posts</strong></p>
-      <div class="row">
-          <% @organisation.posts.each do |post| %>
-            <div class="col-4">
-              <%= link_to organisation_post_path(@organisation, post) do%>
-              <div class="card-product">
-                <% if post.photo.attached? %>
-                <%= cl_image_tag post.photo.key %>
-                <% end %>
-              <div class="card-product-infos">
-                <h2><%= post.title %></h2>
-                <h3><%= post.created_at %></h3>
-                <p><%= post.content %></p>
-              </div>
-              </div>
-        <% end %>
-            </div>
-    <% end %>
     </div>
   </div>
 </div>
