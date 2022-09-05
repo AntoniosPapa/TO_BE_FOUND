@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @organisation = Organisation.find(params[:organisation_id])
   end
 
   def new
@@ -24,6 +25,26 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @organisation = Organisation.find(params[:organisation_id])
+    @post = Post.find(params[:id])
+    # @post.organisation = @organisation
+  end
+
+  def update
+    # @organisation = Organisation.find(params[:organisation_id])
+    @post = Post.find(params[:id])
+    # @post.organisation = @organisation
+    @post.update(post_params)
+
+    if @post.save
+      redirect_to organisation_post_path(@post.organisation, @post), notice: "Update the post"
+    else
+      render :new, status: :unprocessable_entity
+    end
+    # redirect_to organisation_post_path(@organisation, post)
   end
 
   private
