@@ -1,4 +1,3 @@
-
 <div class="container p-5">
   <div class="row card-post">
 
@@ -9,12 +8,11 @@
     </div>
 
     <div class="col-xs-12 col-lg-8">
-      <div class="py-1">
         <h1><%= @post.title %></h1>
         <p id="date"><%= @post.created_at.strftime("%A, %b %d") %></p>
         <p><%= @post.content %></p>
-      </div>
     </div>
+
   </div>
 </div>
 
