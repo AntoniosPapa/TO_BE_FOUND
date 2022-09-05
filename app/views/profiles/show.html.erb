@@ -33,7 +33,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h6>Skills to offer</h6>
+                  <h6>Skills to offer</h6> <img src="../../assets/images/strong.png" alt="">
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -43,10 +43,10 @@
               </div>
             </div>
           </div>
-          <p class="mt-4"><h2>Your skills</h2></p>
+          <p class="p-2 m-3"><h2>Your skills</h2></p>
           <ul class="list-group">
             <% @skills.each do |skill| %>
-              <li class="list-group-item"><i class="fa-solid fa-hand-fist"></i><strong><%= skill.name %></strong></li>
+              <li class="list-group-item"> <%= image_tag Skill::SKILLS_AND_ICONS[skill.name] %> <strong><%= skill.name %></strong></li>
               <li class="list-group-item"><%= skill.description%></li>
               <br>
             <% end %>
@@ -55,7 +55,7 @@
       </div>
       <div class="donations_box mt-4 p-4" style="text-align: center">
         <div class="container m-2">
-          <p><h2>Your donations</h2></p>
+          <p><h2>Your donations<img src="/app/assets/images/donations.png" alt=""></h2></p>
             <ul class="list-group pb-6 pt-1">
               <% @profile.donations.each do |donation| %>
                 <li class="list-group-item"><strong><%= donation.organisation.name%></strong> <i class="fa-solid fa-hand-holding-dollar"></i></li>
@@ -65,6 +65,17 @@
             </ul>
         </div>
       </div>
+
+      <div class="donations_box mt-4 p-4" style="text-align: center">
+        <div class="container m-2">
+          <p><h2>Donations You Have Received</h2></p>
+            <ul class="list-group pb-6 pt-1">
+             
+            </ul>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>
