@@ -1,5 +1,5 @@
 <div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
-  <%= f.input :name, collection: Need::NEEDS, label: 'Skill Needed'  %>
+  <%= f.input :name, collection: Need::NEEDS_AND_ICONS.keys, label: 'Skill Needed'  %>
           <%= f.input :description, as: :text, placeholder: "Give details concerning the needed skill." %>
   <button type="button" data-action="nested-form#remove" class="button my-3">Remove Skill</button>
 

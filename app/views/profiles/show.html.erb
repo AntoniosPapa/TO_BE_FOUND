@@ -1,7 +1,11 @@
-<div class="container mx-auto">
+<div class="container mx-auto m-5">
   <div class="d-flex justify-content-end">
-    <div class="create_org_button my-3">
-      <%= link_to 'Create organisation ', new_organisation_path %>
+    <div class="my-4">
+        <% if @organisation.nil? %>
+          <%= link_to 'Create organisation ', new_organisation_path(@organisation), class:"button" %>
+        <% else %>
+          <%= link_to "Edit organisation", edit_organisation_path(@organisation),  class:"button" %>
+        <% end %>
     </div>
   </div>
   <div class="d-flex justify-content-between my-3">
@@ -18,18 +22,34 @@
           <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
         </ul>
         <%= link_to 'Edit', edit_user_registration_path, class: 'button' %>
+          <p class="pt-5 mt-3"><%= image_tag 'strong.png', width: 50, height:50 %> <h2>Add your skills</h2>
+</p>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <h6>Skills to offer</h6>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <%= render "skills/form", skill: @skill, organisation: @organisation %>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
+
     <div class="flex-grow-1 ps-3">
       <div class="skillset_box p-4" style="text-align: center">
-        <div class="container mt-5">
-          <h3>Add your skills</h3>
-          <%= render "skills/form", skill: @skill, organisation: @organisation %>
-          <p class="mt-4"><strong>Your skills:</strong></p>
+        <div class="container m-2">
+          <p class="p-2 m-3"><%= image_tag 'skills.png', width: 40, height:40 %><h2>Your skills</h2></p>
           <ul class="list-group">
             <% @skills.each do |skill| %>
-              <li class="list-group-item"><%= skill.name %></li>
+              <li class="list-group-item"> <%= image_tag Skill::SKILLS_AND_ICONS[skill.name] %> <strong><%= skill.name %></strong></li>
               <li class="list-group-item"><%= skill.description%></li>
+              <br>
             <% end %>
           </ul>
         </div>
@@ -37,27 +57,32 @@
 
       <div class="donations_box mt-4 p-4" style="text-align: center">
         <div class="container m-2">
-          <p><strong>Your donations:</strong></p>
-            <ul class="list-group pb-6 m-4">
+          <p> <%= image_tag 'donate small.png', width: 40, height:40 %><h2>Your donations</h2></p>
+            <ul class="list-group pb-6 pt-1">
               <% @profile.donations.each do |donation| %>
-                <li class="list-group-item"><%= donation.organisation.name%></li>
-                <li class="list-group-item"><%= donation.quantity%> <%= donation.type_of_donation%></li>
-                <li class="list-group-item"><%= donation.description%></li>
+                <li class="list-group-item"><strong><%= donation.organisation.name%></strong> <i class="fa-solid fa-hand-holding-dollar"></i></li>
+                <li class="list-group-item"><%= donation.quantity%><%= donation.type_of_donation%> - <%= donation.description%></li>
+                <br>
               <% end %>
             </ul>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="browsing_box my-3 p-4" style="text-align: center">
-    <div class="container">
-      <h3>Browse through:</h3>
-      <ul>
-        <li><%= link_to 'All the organisations', organisations_path, class: "list-unstyled" %></li>
-        <li><%= link_to 'My organisations', organisation_path(current_user), class: "list-unstyled" %></li>
-        <li><%= link_to 'Edit my organisation', edit_organisation_path(current_user), class: "list-unstyled" %></li>
-      </ul>
+      <% unless @organisation.nil?  %>
+        <div class="donations_box mt-4 p-4" style="text-align: center">
+          <div class="container m-2">
+          <%= image_tag 'donations received small.png', width: 50, height:50 %><h2>Donations you have received</h2>
+            <ul class="list-group pb-6 pt-1">
+              <% @organisation&.donations&.each do |donation| %>
+                  <li class="list-group-item"> The user <strong><%= donation.user.email %></strong> donated to  <strong><%= donation.organisation.name %></strong></li>
+                  <li class="list-group-item">Amount: <strong><%= donation.quantity%></strong></li>
+                  <br>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+
     </div>
   </div>
 </div>
