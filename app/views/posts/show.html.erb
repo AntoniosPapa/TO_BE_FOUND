@@ -3,14 +3,14 @@
 
     <div class="col-xs-12 col-lg-4">
       <% if @post.photo.attached? %>
-      <%= cl_image_tag @post.photo.key %>
+        <%= cl_image_tag @post.photo.key %>
       <% end %>
     </div>
 
     <div class="col-xs-12 col-lg-8">
-        <h1><%= @post.title %></h1>
-        <p id="date"><%= @post.created_at.strftime("%A, %b %d") %></p>
-        <p><%= @post.content %></p>
+      <h1><%= @post.title %></h1>
+      <p id="date"><%= @post.created_at.strftime("%A, %b %d") %></p>
+      <p><%= @post.content %></p>
     </div>
 
   </div>
