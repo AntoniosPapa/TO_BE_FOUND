@@ -1,5 +1,5 @@
 class Need < ApplicationRecord
-  belongs_to :organisation
+  belongs_to :organisation 
   NEEDS_AND_ICONS = { "Photographer" => "photographer.png",
     "Videographer" => "videographer.png",
     "Construction Helpers" => "construction-worker.png",
