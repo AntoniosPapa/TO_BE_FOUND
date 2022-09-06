@@ -8,6 +8,14 @@ class OrganisationsController < ApplicationController
     else
       @organisations = Organisation.all
     end
+
+    @markers = @organisations.geocoded.map do |organisation|
+      {
+        lat: organisation.latitude,
+        lng: organisation.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {organisation: organisation})
+      }
+    end
   end
 
 
