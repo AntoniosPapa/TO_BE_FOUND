@@ -15,11 +15,8 @@ Rails.application.routes.draw do
 
   resources :donations, only: %i[show]
 
-
   # resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'
 
-  resources :orders, only: %i[show create] do
-    resources :payments, only: :new
-  end
+  resources :payments, only: :new
 end
