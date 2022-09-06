@@ -57,7 +57,7 @@ puts "populate database with organisations.."
 
 orga1 = Organisation.new(
   name: "APIB - Articulation of Indigenous Peoples of Brazil",
-  address: "2674, SHCN CLN 407 - Brasília, DF, Brazil",
+  address: "Asa Norte, Brazil",
   description: "Apib is an instance of national reference of the indigenous movement in Brazil,
   created from the bottom up. It brings together our indigenous regional organizations and
   was born with the purpose of strengthening the unity of our peoples, the articulation
@@ -79,7 +79,7 @@ orga1.save!
 # },
 orga2 = Organisation.new(
   name: "Amazon Watch",
-  address: "SDN Conj A Lj T-25 - Térreo - Asa Norte, Brasília - DF, 70077-900, Brazil",
+  address: "Cuiaba, Brazil",
   description: "Amazon Watch is a nonprofit organization founded in 1996 to protect
   the rainforest and advance the rights of Indigenous peoples in the Amazon Basin in
   Ecuador, Peru, Colombia, and Brazil. We work in solidarity with Indigenous and e
@@ -107,7 +107,7 @@ orga2.save!
 
 orga3 = Organisation.new(
   name: "COIAB",
-  address: "Avenida Ayrão, 235 CEP: 69, 025-290, Av. Ayrão, 235 - Pres. Vargas, Manaus - AM, 69025-290, Brazil",
+  address: "Manaus, Brazil",
   description: "A missão da COIAB é defender os direitos dos povos indígenas a terra,
   saúde, educação, cultura e sustentabilidade, considerando a diversidades de povos,
   e visando sua autonomia através de articulação política e fortalecimento das
@@ -126,7 +126,7 @@ orga3.save!
 
 orga4 = Organisation.new(
   name: "Instituto Raoni",
-  address: "Av. pastor Gerônimo, 306, Peixoto de Azevedo - MT, 78530-000, Brasil",
+  address: "Peixoto de Azevedo, Brasil",
   description: "Nós, comunidades Mẽbêngôkre (ou Kayapó) criamos, em 2001, o Instituto Raoni
   para defender os interesses do nosso povo. O IR é uma Organização da Sociedade Civil de
   Interesse Público, sem fins lucrativos e de caráter associativo e apartidário localizada
@@ -148,7 +148,7 @@ orga4.save!
 
 orga5 = Organisation.new(
   name: "Alianza Ceibo",
-  address: "Parque Perla, Nueva Loja, Ecuador",
+  address: "Nueva Loja, Ecuador",
   description: "Con las fuentes de agua contaminadas, los niños y niñas comenzaron a enfermar.
   Por esa razón decidimos construir sistemas de agua lluvia para poder tomar agua pura en las comunidades.
   Trabajamos entre cuatro nacionalidades y así nos fuimos conociendo. Vimos que todos teníamos problemas y
