@@ -18,4 +18,10 @@ Rails.application.routes.draw do
 
   # resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'
+
+  resources :chatrooms, only: :show
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
