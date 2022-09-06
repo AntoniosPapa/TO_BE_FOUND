@@ -15,7 +15,5 @@ Rails.application.routes.draw do
 
   resources :donations, only: %i[show]
 
-
-  # resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'
 end
