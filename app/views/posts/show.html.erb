@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div  class="text-center">
-              <%= link_to 'Back', organisation_path(@organisation), class: "button" %>
+              <%= link_to 'Back', organisation_path(@organisation, anchor: "org-posts"), class: "button" %>
 
               <% if @organisation == current_user&.organisation %>
                 <%= link_to 'Edit', edit_organisation_post_path(@organisation, @post), class: "button" %>
