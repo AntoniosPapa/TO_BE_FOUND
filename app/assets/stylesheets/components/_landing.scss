@@ -1,5 +1,5 @@
-.banner {
-  background:linear-gradient(0deg, #102E68, #102E68), url(landing_background.jpg);
+.banner-landing {
+  background:linear-gradient(0deg, #102E68, #102E68), url(landing-3.jpg);
   background-blend-mode: hard-light, normal;
   background-size: cover;
   background-position: center;
@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.banner h1 {
+.banner-landing h1 {
   font-weight: 700;
   font-size: 72px;
   line-height: 80px;
@@ -15,7 +15,7 @@
   margin: 0;
 }
 
-.banner p {
+.banner-landing p {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
