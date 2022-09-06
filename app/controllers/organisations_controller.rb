@@ -13,7 +13,8 @@ class OrganisationsController < ApplicationController
       {
         lat: organisation.latitude,
         lng: organisation.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {organisation: organisation})
+        info_window: render_to_string(partial: "info_window", locals: {organisation: organisation}),
+        # image_url: helpers.asset_url("location-dot-solid.png")
       }
     end
   end
