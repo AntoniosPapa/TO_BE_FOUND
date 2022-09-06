@@ -57,7 +57,7 @@ puts "populate database with organisations.."
 
 orga1 = Organisation.new(
   name: "APIB - Articulation of Indigenous Peoples of Brazil",
-  address: "Brazil",
+  address: "2674, SHCN CLN 407 - Brasília, DF, Brazil",
   description: "Apib is an instance of national reference of the indigenous movement in Brazil,
   created from the bottom up. It brings together our indigenous regional organizations and
   was born with the purpose of strengthening the unity of our peoples, the articulation
@@ -79,7 +79,7 @@ orga1.save!
 # },
 orga2 = Organisation.new(
   name: "Amazon Watch",
-  address: "Amazonia",
+  address: "SDN Conj A Lj T-25 - Térreo - Asa Norte, Brasília - DF, 70077-900, Brazil",
   description: "Amazon Watch is a nonprofit organization founded in 1996 to protect
   the rainforest and advance the rights of Indigenous peoples in the Amazon Basin in
   Ecuador, Peru, Colombia, and Brazil. We work in solidarity with Indigenous and e
@@ -107,7 +107,7 @@ orga2.save!
 
 orga3 = Organisation.new(
   name: "COIAB",
-  address: "Brasil",
+  address: "Avenida Ayrão, 235 CEP: 69, 025-290, Av. Ayrão, 235 - Pres. Vargas, Manaus - AM, 69025-290, Brazil",
   description: "A missão da COIAB é defender os direitos dos povos indígenas a terra,
   saúde, educação, cultura e sustentabilidade, considerando a diversidades de povos,
   e visando sua autonomia através de articulação política e fortalecimento das
@@ -118,7 +118,7 @@ orga3 = Organisation.new(
 )
 
 orga3.photo.attach(
-  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1657561892083x198606953326924350%2Fsite%2520copiarcafi.png?w=1024&h=589&auto=compress&dpr=2&fit=max"),
+  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1662065717048x135844437173360700%2FDSC01607-Jo%25C3%25A3o%2520Albuquerque_ISA.%2520Aldeia%2520Jaguapiru_Br%25C3%25B4%2520MCs.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"),
   filename: "#{orga3.name}.png",
   content_type: "image/png"
 )
@@ -126,7 +126,7 @@ orga3.save!
 
 orga4 = Organisation.new(
   name: "Instituto Raoni",
-  address: "Brasil",
+  address: "Av. pastor Gerônimo, 306, Peixoto de Azevedo - MT, 78530-000, Brasil",
   description: "Nós, comunidades Mẽbêngôkre (ou Kayapó) criamos, em 2001, o Instituto Raoni
   para defender os interesses do nosso povo. O IR é uma Organização da Sociedade Civil de
   Interesse Público, sem fins lucrativos e de caráter associativo e apartidário localizada
@@ -148,7 +148,7 @@ orga4.save!
 
 orga5 = Organisation.new(
   name: "Alianza Ceibo",
-  address: "Ecuador",
+  address: "Parque Perla, Nueva Loja, Ecuador",
   description: "Con las fuentes de agua contaminadas, los niños y niñas comenzaron a enfermar.
   Por esa razón decidimos construir sistemas de agua lluvia para poder tomar agua pura en las comunidades.
   Trabajamos entre cuatro nacionalidades y así nos fuimos conociendo. Vimos que todos teníamos problemas y
@@ -170,7 +170,7 @@ orga5.save!
 
 orga6 = Organisation.new(
   name: "Mujeres Amazonicas",
-  address: "Amazonia",
+  address: "Sarayacu, Ecuador",
   description: "Somos un colectivo de Mujeres Amazónicas unidas con el único fin de defender la Selva,
   la vida y nuestras culturas para las futuras generaciones. Formamos el grupo mujeres de 6 nacionalidades
   indígenas de la Amazonia Ecuatoriana: Achuar, Shuar, Shiwiar, Kichwa, Sápara y Waorani.",
@@ -188,11 +188,11 @@ orga6.save!
 
 p "Created #{Organisation.count} Organisations"
 
-post_photos = ["https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1652730513714x993127332238169100%2Fartigo_card_not%25C3%25ADcias_eloy_site.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://www.survivalinternational.org/assets/numiko/photos-min/tribal-lad-holding-wood-1000w@2x-min-387e14965de6fa45e1366787b1fe502e51b16b6c57e583278d802a846810ab89.jpg", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1646853185699x344022660352913540%2FDestaque_site_Reuters.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1647273943986x479408472826475400%2FFoto_Orlando_K._J%25C3%25BAniorObservat%25C3%25B3rio_BR-319.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636581032139x935986165927751400%2Fsite%2520txai.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1625681315567x579281007887117000%2Fdestaque%2520site_foto%2520eric%2520marky%2520mi%25CC%2581dia%2520i%25CC%2581ndia.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1620754233405x229092586265238430%2FFoto_-_The_Guardian_International_Rivers.jpeg.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"]
+post_photos = ["https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1652730513714x993127332238169100%2Fartigo_card_not%25C3%25ADcias_eloy_site.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://www.survivalinternational.org/assets/numiko/photos-min/tribal-lad-holding-wood-1000w@2x-min-387e14965de6fa45e1366787b1fe502e51b16b6c57e583278d802a846810ab89.jpg", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1646853185699x344022660352913540%2FDestaque_site_Reuters.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1647273943986x479408472826475400%2FFoto_Orlando_K._J%25C3%25BAniorObservat%25C3%25B3rio_BR-319.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636581032139x935986165927751400%2Fsite%2520txai.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1625681315567x579281007887117000%2Fdestaque%2520site_foto%2520eric%2520marky%2520mi%25CC%2581dia%2520i%25CC%2581ndia.png?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1620754233405x229092586265238430%2FFoto_-_The_Guardian_International_Rivers.jpeg.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://www.alianzaceibo.org/m3di4/siona2.jpg", "https://www.alianzaceibo.org/m3di4/siona1.jpg", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1655401451949x428328434649680060%2Fnota%2520de%2520pesar%2520bruno%2520e%2520dom%2520coiab%2520copiarsite.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max", "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1656341324297x528478230705724740%2Fnota%2520de%2520rep%25C3%25BAdio.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"]
 
 Organisation.all.each do |org|
   need = Need.new(
-    name: Need::NEEDS_AND_ICONS.keys,
+    name: Need::NEEDS_AND_ICONS.keys.sample,
     organisation: org,
     description: Faker::Quote.matz
   )

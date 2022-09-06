@@ -1,6 +1,5 @@
-
-<div class="row" >
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+<div class="background">
+  <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
     <h2>MEET THE ORGANISATIONS</h2>
 
     <%= form_with url: organisations_path, method: :get, class: "d-flex  w-50  mx-auto" do %>
@@ -12,28 +11,28 @@
       <%= submit_tag "Search", class: "button" %>
     <% end %>
   </div>
-</div>
 
-<div class="container p-5">
-  <div class="row">
-    <% @organisations.each do |organisation|%>
-      <div class="col-4">
-        <%= link_to organisation_path(organisation) do %>
-          <div class="card-organisation mb-5 mx-2">
-            <% if organisation.photo.attached? %>
-              <%= cl_image_tag(organisation.photo.key, :crop => "pad", :class => "card-organisation-img") %>
-            <% end %>
-            <div class="card-organisation-block">
-              <h5><%= organisation.name %></h5>
-              <h6><i class="fa-solid fa-location-dot p-1"></i><%= organisation.address %></h6>
-              <p><%= organisation.description.truncate(200)%></p>
-              <h6><strong>Website: </strong><%= organisation.website %></h6>
-              <h6><strong>E-mail: </strong><%= organisation.email %></h6>
+  <div class="container p-5">
+    <div class="row">
+      <% @organisations.each do |organisation|%>
+        <div class="col-4">
+          <%= link_to organisation_path(organisation) do %>
+            <div class="card-organisation mb-5 mx-2">
+              <% if organisation.photo.attached? %>
+                <%= cl_image_tag(organisation.photo.key, :crop => "pad", :class => "card-organisation-img") %>
+              <% end %>
+              <div class="card-organisation-block">
+                <h5><%= organisation.name %></h5>
+                <h6><i class="fa-solid fa-location-dot p-1"></i><%= organisation.address %></h6>
+                <p><%= organisation.description.truncate(150)%></p>
+                <h6><strong>Website: </strong><%= organisation.website %></h6>
+                <h6><strong>E-mail: </strong><%= organisation.email %></h6>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -42,3 +41,4 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+

@@ -1,5 +1,5 @@
 <%= simple_form_for skill do |f| %>
-          <%= f.input :name, collection: Skill::SKILLS_AND_ICONS.keys, class: 'form-color', placeholder: "Choose a skill that you would like to offer.", label: false%>
+          <%= f.input :name, collection: Skill::SKILLS_AND_ICONS.keys, class: 'form-color', prompt: "Choose skill", label: false%>
           <%= f.input :description, as: :text, class: 'form-color', placeholder: "Tell us about your experience with this skill." %>
           <%= f.submit "Submit", class: 'button' %>
 <% end %>

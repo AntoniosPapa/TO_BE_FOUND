@@ -1,14 +1,12 @@
 
-<div class="d-flex justify-content-center my-5">
-  <% if @organisation.photo.attached? %>
-      <%= cl_image_tag(@organisation.photo.key, :width=> 1000, :crop=>"pad", :radius=>10) %>
-  <% end %>
-</div>
-
-
 <div class="container org-show">
   <div class="row">
     <div class=" col-12 col-lg-8">
+      <div class="d-flex justify-content-start my-5">
+        <% if @organisation.photo.attached? %>
+            <%= cl_image_tag(@organisation.photo.key, :width=> 670, :crop=>"pad", :radius=>10) %>
+        <% end %>
+      </div>
       <h3><%= @organisation&.name&.capitalize %></h3>
       <h5><i class="fa-solid fa-location-dot p-1"></i><%= @organisation&.address&.capitalize %></h5>
       <p><%= @organisation&.description %></p>
@@ -35,7 +33,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header pb-2" id="heading<%= index %>">
                 <button class="accordion-button ab-skills collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
-                  <%= need.name%>
+                  <%= need.name %>
                 </button>
               </h2>
                 <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading<%= index %>" data-bs-parent="#accordionExample">
@@ -52,7 +50,7 @@
       </div>
 
       <div class="col-4">
-        <h3 class="mb-4">Posts</h3>
+        <h3 id="org-posts" class="mb-4">Posts</h3>
         <div class="cards-grid my-4">
             <% @organisation.posts.each do |post| %>
 
@@ -76,7 +74,7 @@
     </div>
 
 
-    <div class="col-12 col-lg-4">
+    <div class="col-12 col-lg-4 my-4">
       <% if @organisation != current_user&.organisation %>
           <div class=" donation-border container p-5 sticky-top border radius-4">
             <h3>Donate:</h3>
