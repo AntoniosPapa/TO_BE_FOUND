@@ -40,7 +40,7 @@
                   <div class="accordion-body">
                     <%= need.description%>
                     <div class="mt-4 mb-2">
-                      <%= link_to "Contact us!", organisation_post_path(@organisation.email), class: "button p-3" %>
+                      <a href="mailto:<%= @organisation.email %>?subject=I%20would%20like%20to%20volunteer&body=Hello%20<%= @organisation.name %>2C%0D%0A%0D%0AI%20am%20reaching%20out%20to%20you%20to%20offer%20my%20skills%20and%20help%20you%20out%20on%20your%20cause.%0D%0AHope%20to%20hear%20back%20from%20you%20soon.%0D%0A%0D%0AThank%20you.%0D%0A" target="_blank" rel="noopener noreferrer" class="button p-3">Contact Us</a>
                     </div>
                   </div>
                 </div>
