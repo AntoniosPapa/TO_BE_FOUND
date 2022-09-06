@@ -1,4 +1,4 @@
-<body class="background">
+
 <div class="row" >
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
     <h2>MEET THE ORGANISATIONS</h2>
@@ -36,4 +36,9 @@
     <% end %>
   </div>
 </div>
-</body>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
