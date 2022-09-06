@@ -18,4 +18,8 @@ Rails.application.routes.draw do
 
   # resources :profiles, only: %i[show]
   get '/profile', to: 'profiles#show'
+
+  resources :orders, only: %i[show create] do
+    resources :payments, only: :new
+  end
 end
