@@ -1,6 +1,8 @@
 class PaymentsController < ApplicationController
   def new
-    # @order = current_user.orders.where(state: 'pending').find(params[:order_id])
-    @order = current_user
+    # @donation = current_user.donations.where(state: 'pending').find(params[:donation_id])
+    @donation = current_user.donations
+    # @donation = Organisation.find(params[:organisation_id])
+    # @donation = Organisation.find(current_user)
   end
 end
