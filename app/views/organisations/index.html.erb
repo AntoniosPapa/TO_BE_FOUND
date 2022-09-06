@@ -2,15 +2,22 @@
   <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlnZW5vdXMlMjBhbWF6b258ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
     <h2>MEET THE ORGANISATIONS</h2>
 
-    <%= form_with url: organisations_path, method: :get, class: "d-flex  w-50  mx-auto" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control opacity-50",
-        placeholder: "What organisation or need are you looking for?"
-      %>
-      <%= submit_tag "Search", class: "button" %>
-    <% end %>
+    <%# <div class="wrap d-flex  w-50  mx-auto"> %>
+      <div class="search">
+        <%= form_with url: organisations_path, method: :get, class: "d-flex  w-50  mx-auto" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control opacity-50",
+          placeholder: "What organisation or need are you looking for?"
+        %>
+      <button <%= submit_tag "Search", class: "searchButton"%>
+        <i class="fa fa-search"></i>
+      </button>
+      <% end %>
+      </div>
+    <%# </div> %>
   </div>
+
 
   <div class="container p-5">
     <div class="row">
