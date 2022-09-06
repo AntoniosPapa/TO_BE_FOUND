@@ -4,5 +4,24 @@
 }
 
 .accordion-body {
+  background: rgba(91, 130, 198, 0.6);
   color: #002f6c !important;
 }
+
+.accordion-header {
+ background: rgba(91, 130, 198, 0.6);
+}
+
+.accordion-collapse {
+  background: rgba(91, 130, 198, 0.6);
+ }
+
+ .accordion-button {
+  background: rgba(91, 130, 198, 0.6) !important;
+  border-color: white !important;
+  border: 2px
+ }
+
+ .accordion h6 {
+  color: #002f6c;
+ }
