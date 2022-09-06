@@ -1,4 +1,6 @@
-<%= cl_image_tag(organisation.photo.key,
-      width: 200, height: 150, crop: :fill) %>
-<h6 p-3><%= organisation.name %></h6>
-<p><%= organisation.address %></p>
+<%= link_to organisation_path(organisation) do %>
+  <%= cl_image_tag(organisation.photo.key,
+        width: 200, height: 150, crop: :fill) %>
+<% end %>
+  <h6 p-3><%= organisation.name %></h6>
+  <p><%= organisation.address %></p>
