@@ -67,9 +67,6 @@
       </div>
     </div>
 
-
-
-
     <div class="col-12 col-lg-4 my-4">
       <% if @organisation != current_user&.organisation %>
           <div class=" donation-border container p-5 sticky-top border radius-4">
@@ -80,10 +77,34 @@
                 <%= f.input :description %>
                 <div class="text-center">
                 <%= f.submit "Donate!", class:"button" %>
+
+                <h3 class="mt-5">Or donate with <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="paypal"></h3>
+
+                <div id="donate-button-container">
+                <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                  PayPal.Donation.Button({
+                  env:'production',
+                  hosted_button_id:'UYDYRK86LCZBA',
+                  image: {
+                  src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                  alt:'Donate with PayPal button',
+                  title:'PayPal - The safer, easier way to pay online!',
+                  }
+                  }).render('#donate-button');
+                </script>
+                </div>
+
+                <%# <h5 class="mt-5">Every donation counts and goes directly to the project.</h5>
+                <h5>To Be Found will change the world</h5> %>
+
                 </div>
               <% end %>
           </div>
         <% end %>
     </div>
+
+
   </div>
 </div>

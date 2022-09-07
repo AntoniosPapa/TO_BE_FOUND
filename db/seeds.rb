@@ -76,34 +76,29 @@ orga1.photo.attach(
 )
 orga1.save!
 
-# },
 orga2 = Organisation.new(
-  name: "Amazon Watch",
-  address: "Cuiaba, Brazil",
-  description: "Amazon Watch is a nonprofit organization founded in 1996 to protect
-  the rainforest and advance the rights of Indigenous peoples in the Amazon Basin in
-  Ecuador, Peru, Colombia, and Brazil. We work in solidarity with Indigenous and e
-  nvironmental organizations in campaigns for human rights, corporate accountability,
-  and the preservation of the Amazon’s ecological systems.
+  name: "CONFENIAE",
+  address: "Puyo, Ecuador",
+  description: "La CONFENIAE es una organización indígena regional que representa a cerca de 1.500 comunidades, pertenecientes a las nacionalidades amazónicas, Kichwa, Shuar, Achuar, Waorani, Sapara, Andwa, Shiwiar, Cofan, Siona, Siekopai y Kijus. El actual presidente de la CONFENIAE es Marlon Vargas del Pueblo Achuar.
+  La CONFENIAE busca el mejoramiento de su calidad de vida mediante el fortalecimiento de las organizaciones filiales, el impulso de programas de desarrollo comunitario, la defensa comunitaria del medio ambiente y los recursos naturales, la revalorización de los contenidos culturales propios y la capacitación a dirigentes de los distintos pueblos Amazónicos.
 
-  The Amazon is home to 400 distinct Indigenous peoples who are its best stewards.
-  The Amazon River Basin is the planet’s largest tropical rainforest.
-  A stabilizer of the global climate, it contains one-third of all species on Earth
-  and a large percentage of the world’s flowing fresh water. The forest and its peoples
-  are facing grave threats due to deforestation, resource extraction, land grabs, and
-  destructive development projects. At Amazon Watch, we are launching bold, strategic,
-  and timely actions to advance and amplify the solutions of Indigenous peoples.",
-  website: "www.amazonwatch.org/",
+  Los nuevos retos planteados en la Amazonía por la expansión de las actividades petroleras, agroindustriales, IIRSA y madereras, han hecho que se privilegie la lucha por la legalización y defensa de los territorios ancestrales de los pueblos y nacionalidades; ello ha conducido a replantearse las formas tradicionales de organización y a adoptar formas legales de existencias para poder defender con más eficiencias a los derechos de los pueblos amazónicos frente al modelo extractivistas impulsado desde el Estado.
+
+  Por todo esto nuestra lucha nuestra lucha es firme y combativa contra un estado colonial y el sistema capitalista que nos explota a los pueblos! Nuestra firme lucha por la AUTODETERMINACIÓN DE LOS PUEBLOS!",
+  website: "www.confeniae.net",
   user_id: User.all.sample.id,
-  email: "amazon@watch.org"
+  email: "comunicacion@confeniae.com"
 )
 
 orga2.photo.attach(
-  io: URI.open("https://amazonwatch.org/wp-content/uploads/2021/10/20.jpg"),
+  io: URI.open("https://confeniae.net/wp-content/uploads/2019/02/IMG_20190227_162754.jpg"),
   filename: "#{orga2.name}.png",
   content_type: "image/png"
 )
 orga2.save!
+
+# },
+
 
 orga3 = Organisation.new(
   name: "Alianza Ceibo",
@@ -127,27 +122,52 @@ orga3.photo.attach(
 )
 orga3.save!
 
-
 orga4 = Organisation.new(
-  name: "COIAB",
-  address: "Manaus, Brazil",
-  description: "A missão da COIAB é defender os direitos dos povos indígenas a terra,
-  saúde, educação, cultura e sustentabilidade, considerando a diversidades de povos,
-  e visando sua autonomia através de articulação política e fortalecimento das
-  organizações indígenas.",
-  website: "www.coiab.org.br",
+  name: "Amazon Watch",
+  address: "Cuiaba, Brazil",
+  description: "Amazon Watch is a nonprofit organization founded in 1996 to protect
+  the rainforest and advance the rights of Indigenous peoples in the Amazon Basin in
+  Ecuador, Peru, Colombia, and Brazil. We work in solidarity with Indigenous and e
+  nvironmental organizations in campaigns for human rights, corporate accountability,
+  and the preservation of the Amazon’s ecological systems.
+
+  The Amazon is home to 400 distinct Indigenous peoples who are its best stewards.
+  The Amazon River Basin is the planet’s largest tropical rainforest.
+  A stabilizer of the global climate, it contains one-third of all species on Earth
+  and a large percentage of the world’s flowing fresh water. The forest and its peoples
+  are facing grave threats due to deforestation, resource extraction, land grabs, and
+  destructive development projects. At Amazon Watch, we are launching bold, strategic,
+  and timely actions to advance and amplify the solutions of Indigenous peoples.",
+  website: "www.amazonwatch.org/",
   user_id: User.all.sample.id,
-  email: "coiab@brazil.br"
+  email: "amazon@watch.org"
 )
 
 orga4.photo.attach(
-  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1662065717048x135844437173360700%2FDSC01607-Jo%25C3%25A3o%2520Albuquerque_ISA.%2520Aldeia%2520Jaguapiru_Br%25C3%25B4%2520MCs.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"),
+  io: URI.open("https://amazonwatch.org/wp-content/uploads/2021/10/20.jpg"),
   filename: "#{orga4.name}.png",
   content_type: "image/png"
 )
 orga4.save!
 
 orga5 = Organisation.new(
+  name: "AIDESEP",
+  address: "La Victoria, Peru",
+  description: "AIDESEP agrupa a los 64 pueblos indígenas amazónicos del Perú:
+  Achuar, Amahuaca, Arabela, Asháninka, Ashéninka, Awajun, Bora, Capanahua, Cashinahua, Chamicuro, Ese Eja, Harakbut, Iñapari, Iquitu, Isconahua, Kakataibo, Kakinte, Kandozi-Chapra, Kukama-Kukamiria, Madija, Maijuna, Matsigenka, Matses, Muniche, Murui-Muinani, Nomatsigenga, Ocaina, Omagua, Resigaro, Secoya, Sharanahua, Shawi, Shipibo-Konibo, Shiwilu, Taushiro, Tikuna, Urarina, Wampis, Yagua, Yaminahua, Yanesha, Yine, Yora (Nahua), Mashco Piro, Chitonahua, Mastanahua.",
+  website: "www.aidesep.org",
+  user_id: User.all.sample.id,
+  email: "aidesep@amazon.org"
+)
+
+orga5.photo.attach(
+  io: URI.open("https://live.staticflickr.com/7650/16720028987_419e8603f1_z.jpg"),
+  filename: "#{orga5.name}.png",
+  content_type: "image/png"
+)
+orga5.save!
+
+orga6 = Organisation.new(
   name: "Instituto Raoni",
   address: "Peixoto de Azevedo, Brasil",
   description: "Nós, comunidades Mẽbêngôkre (ou Kayapó) criamos, em 2001, o Instituto Raoni
@@ -162,71 +182,33 @@ orga5 = Organisation.new(
   email: "instituto@raoni.br"
 )
 
-orga5.photo.attach(
-  io: URI.open("https://institutoraoni.org.br/site/wp-content/uploads/2020/07/0718-nota-raoni-800x533.jpeg"),
-  filename: "#{orga5.name}.png",
-  content_type: "image/png"
-)
-orga5.save!
-
-
-orga6 = Organisation.new(
-  name: "Mujeres Amazonicas",
-  address: "Sarayacu, Ecuador",
-  description: "Somos un colectivo de Mujeres Amazónicas unidas con el único fin de defender la Selva,
-  la vida y nuestras culturas para las futuras generaciones. Formamos el grupo mujeres de 6 nacionalidades
-  indígenas de la Amazonia Ecuatoriana: Achuar, Shuar, Shiwiar, Kichwa, Sápara y Waorani.",
-  website: "www.mujeresamazonicas.net",
-  user_id: User.all.sample.id,
-  email: "mujeres@amazonicas.org"
-)
-
 orga6.photo.attach(
-  io: URI.open("https://static.wixstatic.com/media/147184_5032913666c74ed28ffbc6ecd2ffcc2e~mv2.jpg/v1/fill/w_848,h_606,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Screenshot%202022-03-05%20211612_edited.jpg"),
+  io: URI.open("https://institutoraoni.org.br/site/wp-content/uploads/2020/07/0718-nota-raoni-800x533.jpeg"),
   filename: "#{orga6.name}.png",
   content_type: "image/png"
 )
 orga6.save!
 
 orga7 = Organisation.new(
-  name: "CONFENIAE",
-  address: "Puyo, Ecuador",
-  description: "La CONFENIAE es una organización indígena regional que representa a cerca de 1.500 comunidades, pertenecientes a las nacionalidades amazónicas, Kichwa, Shuar, Achuar, Waorani, Sapara, Andwa, Shiwiar, Cofan, Siona, Siekopai y Kijus. El actual presidente de la CONFENIAE es Marlon Vargas del Pueblo Achuar.
-  La CONFENIAE busca el mejoramiento de su calidad de vida mediante el fortalecimiento de las organizaciones filiales, el impulso de programas de desarrollo comunitario, la defensa comunitaria del medio ambiente y los recursos naturales, la revalorización de los contenidos culturales propios y la capacitación a dirigentes de los distintos pueblos Amazónicos.
-
-  Los nuevos retos planteados en la Amazonía por la expansión de las actividades petroleras, agroindustriales, IIRSA y madereras, han hecho que se privilegie la lucha por la legalización y defensa de los territorios ancestrales de los pueblos y nacionalidades; ello ha conducido a replantearse las formas tradicionales de organización y a adoptar formas legales de existencias para poder defender con más eficiencias a los derechos de los pueblos amazónicos frente al modelo extractivistas impulsado desde el Estado.
-
-  Por todo esto nuestra lucha nuestra lucha es firme y combativa contra un estado colonial y el sistema capitalista que nos explota a los pueblos! Nuestra firme lucha por la AUTODETERMINACIÓN DE LOS PUEBLOS!",
-  website: "www.confeniae.net",
+  name: "COIAB",
+  address: "Manaus, Brazil",
+  description: "A missão da COIAB é defender os direitos dos povos indígenas a terra,
+  saúde, educação, cultura e sustentabilidade, considerando a diversidades de povos,
+  e visando sua autonomia através de articulação política e fortalecimento das
+  organizações indígenas.",
+  website: "www.coiab.org.br",
   user_id: User.all.sample.id,
-  email: "comunicacion@confeniae.com"
+  email: "coiab@brazil.br"
 )
 
 orga7.photo.attach(
-  io: URI.open("https://confeniae.net/wp-content/uploads/2019/02/IMG_20190227_162754.jpg"),
+  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1662065717048x135844437173360700%2FDSC01607-Jo%25C3%25A3o%2520Albuquerque_ISA.%2520Aldeia%2520Jaguapiru_Br%25C3%25B4%2520MCs.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"),
   filename: "#{orga7.name}.png",
   content_type: "image/png"
 )
 orga7.save!
 
 orga8 = Organisation.new(
-  name: "AIDESEP",
-  address: "La Victoria, Peru",
-  description: "AIDESEP agrupa a los 64 pueblos indígenas amazónicos del Perú:
-  Achuar, Amahuaca, Arabela, Asháninka, Ashéninka, Awajun, Bora, Capanahua, Cashinahua, Chamicuro, Ese Eja, Harakbut, Iñapari, Iquitu, Isconahua, Kakataibo, Kakinte, Kandozi-Chapra, Kukama-Kukamiria, Madija, Maijuna, Matsigenka, Matses, Muniche, Murui-Muinani, Nomatsigenga, Ocaina, Omagua, Resigaro, Secoya, Sharanahua, Shawi, Shipibo-Konibo, Shiwilu, Taushiro, Tikuna, Urarina, Wampis, Yagua, Yaminahua, Yanesha, Yine, Yora (Nahua), Mashco Piro, Chitonahua, Mastanahua.",
-  website: "www.aidesep.org",
-  user_id: User.all.sample.id,
-  email: "aidesep@amazon.org"
-)
-
-orga8.photo.attach(
-  io: URI.open("https://live.staticflickr.com/7650/16720028987_419e8603f1_z.jpg"),
-  filename: "#{orga8.name}.png",
-  content_type: "image/png"
-)
-orga8.save!
-
-orga9 = Organisation.new(
   name: "OPIAC",
   address: "Bogotá, Colombia",
   description: "La Organización Nacional de los Pueblos Indígenas de la Amazonia Colombiana –OPIAC es una institución de derecho publico de carácter especial indígena sin animo de lucro la cual ejerce una representación política de los pueblos indígenas de la amazonia colombiana ante instituciones de orden Nacional e Internacional; su objetivo principal es velar para que todos los derechos colectivos e individuales de sus afiliados sean respetados y reconocidos por todos los actores ubicados en la región de la Amazonia Colombiana.
@@ -241,13 +223,30 @@ orga9 = Organisation.new(
   email: "opiac@colombia.org"
 )
 
-orga9.photo.attach(
+orga8.photo.attach(
   io: URI.open("https://opiac.org.co/images/noticias/nacionales/PARO_NACIONAL.jpg"),
+  filename: "#{orga8.name}.png",
+  content_type: "image/png"
+)
+orga8.save!
+
+orga9 = Organisation.new(
+  name: "Mujeres Amazonicas",
+  address: "Sarayacu, Ecuador",
+  description: "Somos un colectivo de Mujeres Amazónicas unidas con el único fin de defender la Selva,
+  la vida y nuestras culturas para las futuras generaciones. Formamos el grupo mujeres de 6 nacionalidades
+  indígenas de la Amazonia Ecuatoriana: Achuar, Shuar, Shiwiar, Kichwa, Sápara y Waorani.",
+  website: "www.mujeresamazonicas.net",
+  user_id: User.all.sample.id,
+  email: "mujeres@amazonicas.org"
+)
+
+orga9.photo.attach(
+  io: URI.open("https://static.wixstatic.com/media/147184_5032913666c74ed28ffbc6ecd2ffcc2e~mv2.jpg/v1/fill/w_848,h_606,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Screenshot%202022-03-05%20211612_edited.jpg"),
   filename: "#{orga9.name}.png",
   content_type: "image/png"
 )
 orga9.save!
-
 
 p "Created #{Organisation.count} Organisations"
 
