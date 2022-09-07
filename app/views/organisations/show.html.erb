@@ -67,23 +67,38 @@
       </div>
     </div>
 
-  
 
 
     <div class="col-12 col-lg-4 my-4">
       <% if @organisation != current_user&.organisation %>
           <div class=" donation-border container p-5 sticky-top border radius-4">
-            <h3>Donate:</h3>
-              <%= simple_form_for [@organisation, @donation ] do |f| %>
-                <%= f.input :type_of_donation, label: 'Currency', collection: ['€', '$'], placeholder:'Currency'%>
-                <%= f.input :quantity, label: 'Amount' %>
-                <%= f.input :description %>
-                <div class="text-center">
-                <%= f.submit "Donate!", class:"button" %>
-                </div>
-              <% end %>
+
+            <h3>Every donation counts and goes directly to the project.</h3>
+            <h4>To Be Found will change the world</h4>
+
+            <div id="donate-button-container">
+              <div id="donate-button"></div>
+              <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+              <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'UYDYRK86LCZBA',
+                image: {
+                src:'https://pics.paypal.com/00/s/MTQzOTlmY2QtMjI1OS00NmIwLWJkMTktMTljMDU2MTAyOTRl/file.PNG',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+              </script>
+            </div>
+
+
+
           </div>
         <% end %>
     </div>
+  </div>
+
+
   </div>
 </div>
