@@ -58,8 +58,7 @@
                 <%= link_to organisation_post_path(@organisation, post) do%>
                 <div class="card-product">
                   <% if post.photo.attached? %>
-                  <%# cl_image_tag post.photo.key %>
-                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dsepdhgsb/image/upload/v1/development/<%= post.photo.key %>)">
+                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(post.photo.key) %>)">
                       <%= post.title %>
                     </div>
                   <% end %>
