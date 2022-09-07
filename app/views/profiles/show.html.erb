@@ -11,10 +11,11 @@
     </div>
     <div class="d-flex justify-content-between p-5">
       <div class ="profile_box p-4">
-        <div class="container mt-5" style="text-align: center">
-          <h2>My profile</h2>
+        <div class="container mt-4" style="text-align: center">
+          <h2>My Profile</h2>
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag(current_user.photo.key, :width => 150, :crop => "pad", :radius => "max")%>
+            <%#= cl_image_tag(current_user.photo.key, :width => 200, :crop => "pad", :radius => "max")%>
+            <i class="pro_img"><%= cl_image_tag(current_user.photo.key)%></i>
           <% end %>
 
           <ul class="list-unstyled">

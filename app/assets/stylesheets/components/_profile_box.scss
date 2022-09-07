@@ -23,6 +23,16 @@ background: rgba(91, 130, 198, 0.6);
 .profile_box {
   h2 {
     color: whitesmoke ;
+    padding-bottom: 0px;
 
   }
+}
+
+.pro_img img {
+  padding: 0px;
+  border: solid rgba(16,61,104, 0.5) 5px;
+  width: 200px;
+  border-radius: 50%;
+  // margin-top: -44px;
+  margin-bottom: 20px;
 }
