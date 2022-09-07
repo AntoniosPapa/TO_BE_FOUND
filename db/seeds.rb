@@ -64,7 +64,7 @@ orga1 = Organisation.new(
   between the different indigenous regions and organizations in the country,
   in addition to mobilizing indigenous peoples and organizations against threats
   and aggressions against indigenous rights.",
-  website: "https://apiboficial.org/?lang=en",
+  website: "www.apiboficial.org/?lang=en",
   user_id: User.all.sample.id,
   email: "apib@oficial.br"
 )
@@ -76,8 +76,53 @@ orga1.photo.attach(
 )
 orga1.save!
 
-# },
 orga2 = Organisation.new(
+  name: "CONFENIAE",
+  address: "Puyo, Ecuador",
+  description: "La CONFENIAE es una organización indígena regional que representa a cerca de 1.500 comunidades, pertenecientes a las nacionalidades amazónicas, Kichwa, Shuar, Achuar, Waorani, Sapara, Andwa, Shiwiar, Cofan, Siona, Siekopai y Kijus. El actual presidente de la CONFENIAE es Marlon Vargas del Pueblo Achuar.
+  La CONFENIAE busca el mejoramiento de su calidad de vida mediante el fortalecimiento de las organizaciones filiales, el impulso de programas de desarrollo comunitario, la defensa comunitaria del medio ambiente y los recursos naturales, la revalorización de los contenidos culturales propios y la capacitación a dirigentes de los distintos pueblos Amazónicos.
+
+  Los nuevos retos planteados en la Amazonía por la expansión de las actividades petroleras, agroindustriales, IIRSA y madereras, han hecho que se privilegie la lucha por la legalización y defensa de los territorios ancestrales de los pueblos y nacionalidades; ello ha conducido a replantearse las formas tradicionales de organización y a adoptar formas legales de existencias para poder defender con más eficiencias a los derechos de los pueblos amazónicos frente al modelo extractivistas impulsado desde el Estado.
+
+  Por todo esto nuestra lucha nuestra lucha es firme y combativa contra un estado colonial y el sistema capitalista que nos explota a los pueblos! Nuestra firme lucha por la AUTODETERMINACIÓN DE LOS PUEBLOS!",
+  website: "www.confeniae.net",
+  user_id: User.all.sample.id,
+  email: "comunicacion@confeniae.com"
+)
+
+orga2.photo.attach(
+  io: URI.open("https://confeniae.net/wp-content/uploads/2019/02/IMG_20190227_162754.jpg"),
+  filename: "#{orga2.name}.png",
+  content_type: "image/png"
+)
+orga2.save!
+
+# },
+
+
+orga3 = Organisation.new(
+  name: "Alianza Ceibo",
+  address: "Nueva Loja, Ecuador",
+  description: "Con las fuentes de agua contaminadas, los niños y niñas comenzaron a enfermar.
+  Por esa razón decidimos construir sistemas de agua lluvia para poder tomar agua pura en las comunidades.
+  Trabajamos entre cuatro nacionalidades y así nos fuimos conociendo. Vimos que todos teníamos problemas y
+  experiencias similares, y aunque somos distintos, nos dimos cuenta de que existen muchas cosas que nos unen.
+  De esta amistad surgió la “Alianza Ceibo”, que es una alianza conformada por personas de
+  los pueblos A’i Kofan, Siona, Siekopai y Waorani, que trabaja unida para llevar alegría y salud
+  a nuestras comunidades.",
+  website: "www.alianzaceibo.org/",
+  user_id: User.all.sample.id,
+  email: "alianza@ceibo.ec"
+)
+
+orga3.photo.attach(
+  io: URI.open("https://www.alianzaceibo.org/m3di4/WhatsApp-Image-2022-01-27-at-10.37.19-AM.jpeg"),
+  filename: "#{orga3.name}.png",
+  content_type: "image/png"
+)
+orga3.save!
+
+orga4 = Organisation.new(
   name: "Amazon Watch",
   address: "Cuiaba, Brazil",
   description: "Amazon Watch is a nonprofit organization founded in 1996 to protect
@@ -93,38 +138,36 @@ orga2 = Organisation.new(
   are facing grave threats due to deforestation, resource extraction, land grabs, and
   destructive development projects. At Amazon Watch, we are launching bold, strategic,
   and timely actions to advance and amplify the solutions of Indigenous peoples.",
-  website: "https://amazonwatch.org/",
+  website: "www.amazonwatch.org/",
   user_id: User.all.sample.id,
   email: "amazon@watch.org"
 )
 
-orga2.photo.attach(
+orga4.photo.attach(
   io: URI.open("https://amazonwatch.org/wp-content/uploads/2021/10/20.jpg"),
-  filename: "#{orga2.name}.png",
+  filename: "#{orga4.name}.png",
   content_type: "image/png"
 )
-orga2.save!
+orga4.save!
 
-orga3 = Organisation.new(
-  name: "COIAB",
-  address: "Manaus, Brazil",
-  description: "A missão da COIAB é defender os direitos dos povos indígenas a terra,
-  saúde, educação, cultura e sustentabilidade, considerando a diversidades de povos,
-  e visando sua autonomia através de articulação política e fortalecimento das
-  organizações indígenas.",
-  website: "https://coiab.org.br",
+orga5 = Organisation.new(
+  name: "AIDESEP",
+  address: "La Victoria, Peru",
+  description: "AIDESEP agrupa a los 64 pueblos indígenas amazónicos del Perú:
+  Achuar, Amahuaca, Arabela, Asháninka, Ashéninka, Awajun, Bora, Capanahua, Cashinahua, Chamicuro, Ese Eja, Harakbut, Iñapari, Iquitu, Isconahua, Kakataibo, Kakinte, Kandozi-Chapra, Kukama-Kukamiria, Madija, Maijuna, Matsigenka, Matses, Muniche, Murui-Muinani, Nomatsigenga, Ocaina, Omagua, Resigaro, Secoya, Sharanahua, Shawi, Shipibo-Konibo, Shiwilu, Taushiro, Tikuna, Urarina, Wampis, Yagua, Yaminahua, Yanesha, Yine, Yora (Nahua), Mashco Piro, Chitonahua, Mastanahua.",
+  website: "www.aidesep.org",
   user_id: User.all.sample.id,
-  email: "coiab@brazil.br"
+  email: "aidesep@amazon.org"
 )
 
-orga3.photo.attach(
-  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1662065717048x135844437173360700%2FDSC01607-Jo%25C3%25A3o%2520Albuquerque_ISA.%2520Aldeia%2520Jaguapiru_Br%25C3%25B4%2520MCs.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"),
-  filename: "#{orga3.name}.png",
+orga5.photo.attach(
+  io: URI.open("https://live.staticflickr.com/7650/16720028987_419e8603f1_z.jpg"),
+  filename: "#{orga5.name}.png",
   content_type: "image/png"
 )
-orga3.save!
+orga5.save!
 
-orga4 = Organisation.new(
+orga6 = Organisation.new(
   name: "Instituto Raoni",
   address: "Peixoto de Azevedo, Brasil",
   description: "Nós, comunidades Mẽbêngôkre (ou Kayapó) criamos, em 2001, o Instituto Raoni
@@ -134,57 +177,76 @@ orga4 = Organisation.new(
   mas também dos povos Trumai, Tapayuna e Panará, para o acesso a políticas públicas e
   captação de recursos para fortalecer nossas atividades culturais, nossa produção de
   alimentos, nossa geração de renda e a proteção dos nossos territórios e direitos.",
-  website: "https://institutoraoni.org.br",
+  website: "institutoraoni.org.br",
   user_id: User.all.sample.id,
   email: "instituto@raoni.br"
 )
 
-orga4.photo.attach(
+orga6.photo.attach(
   io: URI.open("https://institutoraoni.org.br/site/wp-content/uploads/2020/07/0718-nota-raoni-800x533.jpeg"),
-  filename: "#{orga3.name}.png",
+  filename: "#{orga6.name}.png",
   content_type: "image/png"
 )
-orga4.save!
+orga6.save!
 
-orga5 = Organisation.new(
-  name: "Alianza Ceibo",
-  address: "Nueva Loja, Ecuador",
-  description: "Con las fuentes de agua contaminadas, los niños y niñas comenzaron a enfermar.
-  Por esa razón decidimos construir sistemas de agua lluvia para poder tomar agua pura en las comunidades.
-  Trabajamos entre cuatro nacionalidades y así nos fuimos conociendo. Vimos que todos teníamos problemas y
-  experiencias similares, y aunque somos distintos, nos dimos cuenta de que existen muchas cosas que nos unen.
-  De esta amistad surgió la “Alianza Ceibo”, que es una alianza conformada por personas de
-  los pueblos A’i Kofan, Siona, Siekopai y Waorani, que trabaja unida para llevar alegría y salud
-  a nuestras comunidades.",
-  website: "https://www.alianzaceibo.org/",
+orga7 = Organisation.new(
+  name: "COIAB",
+  address: "Manaus, Brazil",
+  description: "A missão da COIAB é defender os direitos dos povos indígenas a terra,
+  saúde, educação, cultura e sustentabilidade, considerando a diversidades de povos,
+  e visando sua autonomia através de articulação política e fortalecimento das
+  organizações indígenas.",
+  website: "www.coiab.org.br",
   user_id: User.all.sample.id,
-  email: "alianza@ceibo.ec"
+  email: "coiab@brazil.br"
 )
 
-orga5.photo.attach(
-  io: URI.open("https://www.alianzaceibo.org/m3di4/WhatsApp-Image-2022-01-27-at-10.37.19-AM.jpeg"),
-  filename: "#{orga3.name}.png",
+orga7.photo.attach(
+  io: URI.open("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1662065717048x135844437173360700%2FDSC01607-Jo%25C3%25A3o%2520Albuquerque_ISA.%2520Aldeia%2520Jaguapiru_Br%25C3%25B4%2520MCs.jpg?w=1024&h=589&auto=compress&dpr=2&fit=max"),
+  filename: "#{orga7.name}.png",
   content_type: "image/png"
 )
-orga5.save!
+orga7.save!
 
-orga6 = Organisation.new(
+orga8 = Organisation.new(
+  name: "OPIAC",
+  address: "Bogotá, Colombia",
+  description: "La Organización Nacional de los Pueblos Indígenas de la Amazonia Colombiana –OPIAC es una institución de derecho publico de carácter especial indígena sin animo de lucro la cual ejerce una representación política de los pueblos indígenas de la amazonia colombiana ante instituciones de orden Nacional e Internacional; su objetivo principal es velar para que todos los derechos colectivos e individuales de sus afiliados sean respetados y reconocidos por todos los actores ubicados en la región de la Amazonia Colombiana.
+
+  MISIÓN
+  Promover, desarrollar e impulsar mecanismos para la interacción de los pueblos y organizaciones indígenas de la Amazonia Colombiana, articulando procesos con el Estado y ONG’s nacionales e internacionales, promoviendo el fortalecimiento, la autonomía, proyección del desarrollo propio y los derechos sociales, económicos, políticos, culturales, así como la conservación de la diversidad biológica bajo los principios de unidad, cultura, territorio y autonomía; mediante mecanismos de gestión institucional, concertación política, prestación de servicios, asesoría especializada y acompañamiento, brindando información pertinente y oportuna a sus organizaciones, a sus dirigentes y comunidades.
+
+  VISIÓN
+  La OPIAC estará posicionada en el contexto nacional e internacional, con ideología y pensamiento ancestral, para la defensa y protección de los derechos colectivos, con identidad de los pueblos indígenas de la Amazonía colombiana; consolidada técnica, operativa, económica, cultural y políticamente para responder a las necesidades de los pueblos Amazónicos; con capacidad de promover, orientar y coordinar procesos de desarrollo propio, con mecanismos viables para el diseño, formulación, acompañamiento e implementación de los planes de vida como estrategia de control y manejo territorial, para avanzar hacia un desarrollo sostenible, que garantice la supervivencia cultural de los pueblos.",
+  website: "www.opiac.org.co",
+  user_id: User.all.sample.id,
+  email: "opiac@colombia.org"
+)
+
+orga8.photo.attach(
+  io: URI.open("https://opiac.org.co/images/noticias/nacionales/PARO_NACIONAL.jpg"),
+  filename: "#{orga8.name}.png",
+  content_type: "image/png"
+)
+orga8.save!
+
+orga9 = Organisation.new(
   name: "Mujeres Amazonicas",
   address: "Sarayacu, Ecuador",
   description: "Somos un colectivo de Mujeres Amazónicas unidas con el único fin de defender la Selva,
   la vida y nuestras culturas para las futuras generaciones. Formamos el grupo mujeres de 6 nacionalidades
   indígenas de la Amazonia Ecuatoriana: Achuar, Shuar, Shiwiar, Kichwa, Sápara y Waorani.",
-  website: "https://www.mujeresamazonicas.net/",
+  website: "www.mujeresamazonicas.net",
   user_id: User.all.sample.id,
   email: "mujeres@amazonicas.org"
 )
 
-orga6.photo.attach(
+orga9.photo.attach(
   io: URI.open("https://static.wixstatic.com/media/147184_5032913666c74ed28ffbc6ecd2ffcc2e~mv2.jpg/v1/fill/w_848,h_606,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Screenshot%202022-03-05%20211612_edited.jpg"),
-  filename: "#{orga3.name}.png",
+  filename: "#{orga9.name}.png",
   content_type: "image/png"
 )
-orga6.save!
+orga9.save!
 
 p "Created #{Organisation.count} Organisations"
 
