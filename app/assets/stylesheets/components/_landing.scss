@@ -36,7 +36,7 @@
 }
 
 .card {
-  margin: 45px;
+  margin: 35px;
   text-align: center;
   padding: 15px;
   box-shadow: #102E68;
@@ -62,10 +62,22 @@
   padding-top: 45px;
 }
 
-h2 {
+.card h2 {
   color: #102E68;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.org_btn_background h3 {
   padding: 20px;
 }
+
+.card p {
+  color: #5B82C6;
+  font-size: 16px;
+}
+
+
 
 .background-cards {
   background: #102E68;
