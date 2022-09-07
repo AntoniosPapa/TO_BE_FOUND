@@ -9,13 +9,15 @@
   background-blend-mode: hard-light, normal;
   background-size: cover;
   background-position: center;
-  padding: 400px 0;
+  padding: 160px 0;
   text-align: center;
+  // height: 80vh;
 }
 
 .banner h2 {
   color: white;
-  font-size: 35px;
+  font-size: 70px;
+  font-weight: bold;
 }
 
 .flex-container {

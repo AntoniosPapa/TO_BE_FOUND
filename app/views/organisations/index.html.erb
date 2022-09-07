@@ -1,13 +1,13 @@
 <div class="background">
   <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1564750576234-75de3cc54053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2938&q=80)">
-    <h2>ORGANISATIONS</h2>
+    <h2>Organisations</h2>
 
       <div class="search">
         <%= form_with url: organisations_path, method: :get, class: "d-flex  w-50  mx-auto" do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control opacity-50",
-          placeholder: "What organisation or need are you looking for?"
+          class: "form-control opacity-75",
+          placeholder: "Search by organisation name or skills"
         %>
       <button <%= submit_tag "Search", class: "searchButton"%>
         <i class="fa fa-search"></i>
