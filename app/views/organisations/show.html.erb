@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@organisation.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @organisation.description %>
+<% content_for :meta_image, cl_image_path(@organisation.photo.key) %>
 
 <div class="container org-show">
   <div class="row">
