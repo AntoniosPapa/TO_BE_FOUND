@@ -1,11 +1,5 @@
 .donations_box {
 box-sizing: border-box;
-
-// position: absolute;
-// width: 649px;
-// height: 240px;
-// left: 584px;
-// top: 793px;
 color: aliceblue;
 background: #4f83cc;
 border: 1px solid #5B82C6;
@@ -21,11 +15,9 @@ background: rgba(91, 130, 198, 0.6);
 .donations_box {
   li {
     color:#002f6c;
-    background-color: whitesmoke;
     opacity: 0.95;
     border-radius: 1px;
     border-color: whitesmoke;
-    // width: 800px;
     text-align: center;
     background: rgba(181, 207, 254, 0.8);
   }
