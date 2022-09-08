@@ -1,15 +1,8 @@
 .skillset_box {
 box-sizing: border-box;
-
-// position: absolute;
-// width: 649px;
-// height: 499px;
-// left: 584px;
-// top: 257px;
 color: aliceblue;
 background: #4f83cc;
 border: 1px solid #5B82C6;
-
 border-radius: 15px;
 background: rgba(91, 130, 198, 0.6);
 }
@@ -17,14 +10,11 @@ background: rgba(91, 130, 198, 0.6);
 .skillset_box {
   li {
     color:#002f6c;
-    background-color: whitesmoke;
     opacity: 0.95;
     border-radius: 1px;
     border-color: whitesmoke;
-
-    // width: 800px;
     text-align: center;
-    background: rgba(91, 130, 198, 0.8);
+    background: rgba(181, 207, 254, 0.8);
   }
 }
 
@@ -37,6 +27,5 @@ background: rgba(91, 130, 198, 0.6);
 .skillset_box {
   h6 {
     color:#002f6c;
-
   }
 }
