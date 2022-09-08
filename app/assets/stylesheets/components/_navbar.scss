@@ -28,5 +28,17 @@
 }
 
 .dropdown-item {
-  background-color: #102e68;
+  background-color: #102d68 !important;
+  color: white !important;
+}
+
+.dropdown-item:hover {
+  background-color: #235696 !important;
+  color: white !important;
+}
+
+
+.dropdown-menu  {
+  background-color: #102d68 !important;
+  color: white !important;
 }
