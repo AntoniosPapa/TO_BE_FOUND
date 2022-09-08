@@ -1,7 +1,7 @@
 <div class="profile-background">
   <div class="container mx-auto">
-    <div class="d-flex justify-content-end">
-      <div class="my-4">
+    <div class="d-flex justify-content-center">
+      <div class="my-4 mt-5">
           <% if @organisation.nil? %>
             <%= link_to 'Create organisation ', new_organisation_path(@organisation), class:"button" %>
           <% else %>
