@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import NestedForm from 'stimulus-rails-nested-form'
+application.register('nested-form', NestedForm)
+
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
