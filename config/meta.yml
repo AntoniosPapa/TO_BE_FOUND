@@ -1,4 +1,4 @@
 meta_product_name: "To Be Found"
-meta_title: "To Be Found - Donations Webpage"
-meta_description: "To Be Found is a Weppage that focuses on helping the indegenous people save the Amazon rainforest"
-meta_image: "landing-3.jpg" # should exist in `app/assets/images/`
+meta_title: "To Be Found - Help the indegenous people save the Amazon rainforest."
+meta_description: "To Be Found connects people who want to help with organisations who need help in the Amazon rainforest area."
+meta_image: "meta-image.jpg" # should exist in `app/assets/images/`

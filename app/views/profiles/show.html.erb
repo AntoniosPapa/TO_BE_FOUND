@@ -11,10 +11,11 @@
     </div>
     <div class="d-flex justify-content-between p-5">
       <div class ="profile_box p-4">
-        <div class="container mt-5" style="text-align: center">
-          <h2>My profile</h2>
+        <div class="container mt-4" style="text-align: center">
+          <h2>My Profile</h2>
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag(current_user.photo.key, :width => 150, :crop => "pad", :radius => "max")%>
+            <%#= cl_image_tag(current_user.photo.key, :width => 200, :crop => "pad", :radius => "max")%>
+            <i class="pro_img"><%= cl_image_tag(current_user.photo.key)%></i>
           <% end %>
 
           <ul class="list-unstyled">
@@ -23,7 +24,7 @@
             <li class="p-2"><strong>Description: </strong><%=  current_user.description %></li>
           </ul>
           <%= link_to 'Edit', edit_user_registration_path, class: 'button' %>
-            <div class="pt-5 mt-3"><%= image_tag 'strong.png', width: 50, height:50 %> <h2>Add your skills</h2>
+            <div class="pt-5 mt-3"><%= image_tag 'strong.png', width: 50, height:50 %> <h3>Add your skills</h3>
             </div>
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
@@ -46,7 +47,7 @@
       <div class="flex-grow-1 ps-3">
         <div class="skillset_box p-4" style="text-align: center">
           <div class="container m-2">
-            <p class="p-2 m-3"><%= image_tag 'skills.png', width: 40, height:40 %><h2>Your skills</h2></p>
+            <p class="p-2 m-3"><%= image_tag 'skills.png', width: 40, height:40 %><h3>Your skills</h3></p>
             <ul class="list-group">
               <% @skills.each do |skill| %>
                 <li class="list-group-item"> <%= image_tag Skill::SKILLS_AND_ICONS[skill.name] %> <strong><%= skill.name %></strong></li>
@@ -59,7 +60,7 @@
 
         <div class="donations_box mt-4 p-4" style="text-align: center">
           <div class="container m-2">
-            <p> <%= image_tag 'donate small.png', width: 40, height:40 %><h2>Your donations</h2></p>
+            <p> <%= image_tag 'donate small.png', width: 40, height:40 %><h3>Your donations</h3></p>
               <ul class="list-group pb-6 pt-1">
                 <% @profile.donations.each do |donation| %>
                   <li class="list-group-item"><strong><%= donation.organisation.name%></strong> <i class="fa-solid fa-hand-holding-dollar"></i></li>

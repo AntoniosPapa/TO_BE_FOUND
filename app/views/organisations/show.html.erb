@@ -10,8 +10,8 @@
             <%= cl_image_tag(@organisation.photo.key, :width=> 670, :crop=>"pad", :radius=>10) %>
         <% end %>
       </div>
-      <h3><%= @organisation&.name&.capitalize %></h3>
-      <h5><i class="fa-solid fa-location-dot p-1"></i><%= @organisation&.address&.capitalize %></h5>
+      <h3><%= @organisation&.name %></h3>
+      <h5><i class="fa-solid fa-location-dot p-1"></i><%= @organisation&.address %></h5>
       <p><%= @organisation&.description %></p>
       <h5><%= @organisation&.email %> </h5>
       <a href="<%= @organisation&.website %>">Visit our official website</a>
@@ -58,8 +58,7 @@
                 <%= link_to organisation_post_path(@organisation, post) do%>
                 <div class="card-product">
                   <% if post.photo.attached? %>
-                  <%# cl_image_tag post.photo.key %>
-                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dsepdhgsb/image/upload/v1/development/<%= post.photo.key %>)">
+                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(post.photo.key) %>)">
                       <%= post.title %>
                     </div>
                   <% end %>
